@@ -24,6 +24,7 @@ GuardarTrasporte = function(){
     document.getElementById('NumeroSerie').value = null;
     document.getElementById('Tracto').value = null;
 
+    mostrarTrasportesSelc();
 }
 
 
@@ -47,7 +48,7 @@ GuardarEmpleado = function(){
     document.getElementById('Curp').value = null;
     document.getElementById('Ine').value = null;
 
-
+    mostrarEmpleadoSelc();
 }
 
 
@@ -64,6 +65,8 @@ GuardarCliente = function(){
     document.getElementById('NombreC').value = null;
     document.getElementById('ApellidoC').value = null;
     document.getElementById('Referencias').value = null;
+
+    mostrarClienteSelc();
 }
 
 
@@ -80,4 +83,96 @@ GuardarServicio = function(){
     document.getElementById('TipoMat').value = null;
     document.getElementById('CantidadMat').value = null;
     document.getElementById('Costo').value = null;
+
+    mostrarServicioSelc();
 }
+
+GuardarRuta=function(){
+    let HorarioPartida = document.getElementById("HorarioS").value;
+    let HorarioLlegada = document.getElementById("HorarioL").value;
+    let Destino = document.getElementById("Destino").value;
+
+    let Tra=document.getElementById("Tra").value;
+    let tras=Trasportes[Tra];
+        
+    let Emp = document.getElementById("Emp").value;
+    let emp=Empleados[Emp];
+
+    let Cli=document.getElementById("Cli").value;
+    let cli=Clientes[Cli];
+
+    let Ser=document.getElementById("Ser").value;
+    let ser=Servicios[Ser];
+
+    let R = new Ruta(HorarioPartida,HorarioLlegada,Destino,tras,emp,cli,ser);
+
+    tras.setRuta(R);
+    emp.setRuta(R);
+    cli.setRuta(R);
+    ser.setRuta(R);
+
+    Rutas.push(R);
+
+    document.getElementById("HorarioS").value=null;
+    document.getElementById("HorarioL").value=null;
+    document.getElementById("Destino").value=null;
+    document.getElementById("Tra").value=null;
+    document.getElementById("Emp").value=null;
+    document.getElementById("Cli").value=null;
+    document.getElementById("Ser").value=null;
+    
+}
+
+
+
+
+
+
+
+
+
+mostrarTrasportesSelc=function (){
+    let options = '<option value="" selected disabled>Seleccione</option>'
+    let select =  document.getElementById('Tra');
+    select.innerHTML = '';
+    for(let i = 0; i<Trasportes.length; i++){
+        options += `<option value="${i}">${Trasportes[i].Modelo}</option>`;
+    }
+
+    select.innerHTML = options;
+}
+
+mostrarEmpleadoSelc=function(){
+    let options = '<option value="" selected disabled>Seleccione</option>'
+    let select =  document.getElementById('Emp');
+    select.innerHTML = '';
+    for(let i = 0; i<Empleados.length; i++){
+        options += `<option value="${i}">${Empleados[i].Nombre}</option>`;
+    }
+
+    select.innerHTML = options;
+}
+
+mostrarClienteSelc=function(){
+    let options = '<option value="" selected disabled>Seleccione</option>'
+    let select =  document.getElementById('Cli');
+    select.innerHTML = '';
+    for(let i = 0; i<Clientes.length; i++){
+        options += `<option value="${i}">${Clientes[i].Nombre}</option>`;
+    }
+
+    select.innerHTML = options;
+}
+
+mostrarServicioSelc=function(){
+    let options = '<option value="" selected disabled>Seleccione</option>'
+    let select =  document.getElementById('Ser');
+    select.innerHTML = '';
+    for(let i = 0; i<Servicios.length; i++){
+        options += `<option value="${i}">${Servicios[i].TipoMaterial}</option>`;
+    }
+
+    select.innerHTML = options;
+}
+
+

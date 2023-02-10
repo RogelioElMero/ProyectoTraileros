@@ -1,5 +1,6 @@
 class Cliente extends Persona{
     #Referencia;
+    Ruta=[];
     /**
      * 
      * @param {String} name 
@@ -13,13 +14,7 @@ class Cliente extends Persona{
 
     }
     
-    /**
-     * 
-     * @param {String} Referen 
-     */
-    setReferencias=function(Referen){
-        this.Referencia=Referen;
-    }
+    
 
     /**
      * 
