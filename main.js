@@ -1,8 +1,8 @@
-var Ruta=[];
-var Trasporte=[];
-var Cliente=[];
-var Servicio=[];
-var Empleado=[];
+var Rutas=[];
+var Trasportes=[];
+var Clientes=[];
+var Servicios=[];
+var Empleados=[];
 
 GuardarTrasporte = function(){
 
@@ -15,12 +15,16 @@ GuardarEmpleado = function(){
 
 }
 
+
+
+
 GuardarCliente = function(){
 
 
 
 
 }
+
 
 GuardarServicio = function(){
 

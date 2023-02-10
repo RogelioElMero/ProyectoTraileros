@@ -24,4 +24,12 @@ class Cliente extends Persona{
         ruta.push(Ruta);
     }
 
+    /**
+     * 
+     * @param {String} referencia 
+     */
+    updateReferencia = function(referencia){
+        this.Referencia=referencia;
+    }
+
 }

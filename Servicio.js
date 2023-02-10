@@ -19,6 +19,30 @@ class Servicio {
         ruta.push(Ruta);
     }
 
+    /**
+     * 
+     * @param {String} tipoMaterial 
+     */
+    updateTipoMaterial=function(tipoMaterial){
+        this.#TipoMaterial=tipoMaterial;
+
+    }
+
+    /**
+     * 
+     * @param {Float} cantidadDeMaterial 
+     */
+    updateCatindadDeMaterial=function(cantidadDeMaterial){
+        this.#CantidadDeMaterial=cantidadDeMaterial;
+    }
+    
+    /**
+     * 
+     * @param {Float} costo 
+     */
+    updateCosto=function(costo){
+        this.#Costo=costo;
+    }
     
 
 

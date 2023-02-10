@@ -36,16 +36,17 @@
               </div>
          </td>
          
-        
+        </tr>
 
-        <td>
-            <div>
+        <tr>
+            <td>
+             <div>
                 <h1>Guardar Empleados</h1>
-              <label for="">Ingrese el Nombre del empleado</label><br>
-              <input type="text" name="NombreE"><br>
+               <label for="">Ingrese el Nombre del empleado</label><br>
+               <input type="text" name="NombreE"><br>
                <label for="">Ingrese el apellido del empleado</label><br>
                <input type="text" name="ApellidoE"><br>
-                <label for="">Ingrese la Ocupacion del empleado</label><br>
+               <label for="">Ingrese la Ocupacion del empleado</label><br>
                 <input type="text" name="Ocupacion"><br>
                <label for="">Ingrese el horario del empleado</label><br>
                <input type="text" name="Horario"><br>
@@ -57,6 +58,7 @@
               </div>
             </td>     
         </tr>
+
         <tr>
             <td>
                 <div>
@@ -71,13 +73,15 @@
                 </div>
 
             </td>
-                
+        </tr>    
+        
+        <tr>
             <td>
                 <h1>Guardar Servicion</h1>
                 <div>
                     <label for="">Ingrese el tipo de material</label><br>
                     <input type="text" name="TipoMat"><br>
-                       <label for="">Ingrese La cantidad de material</label><br>
+                       <label for="">Ingrese la cantidad de material</label><br>
                        <input type="text" name="CantidadMat"><br>
                        <label for="">Ingrese el costo</label><br>
                        <input type="text" name="Costo"><br>
@@ -85,7 +89,27 @@
    
                 </div>
             </td>
+        </tr>
 
+        <tr>
+            <td>
+                <h1>Guardar Rutas</h1>
+                <div>
+                    <label for="">Ingrese el horario de salida</label><br>
+                    <input type="text" name="HorarioS"><br>
+                       <label for="">Ingrese el horario de llegada</label><br>
+                       <input type="text" name="HorarioL"><br>
+                       <label for="">Ingrese el destino a llegar</label><br>
+                       <input type="text" name="Destino"><br>
+                       <select name="" id=""></select><br>
+                       <select name="" id=""></select><br>
+                       <select name="" id=""></select><br>
+                       <select name="" id=""></select><br>
+
+                       
+                       <button onclick="GuardarServicio()">Guardar</button>
+                   </div>
+            </td>
         </tr>
 
 </table>

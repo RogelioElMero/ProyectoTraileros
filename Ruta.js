@@ -1,4 +1,4 @@
-class Ruta {
+class Ruta{
     #HorarioPartida;
     #HorarioLlegada;
     #Destino;
@@ -13,7 +13,7 @@ class Ruta {
         this.#HorarioPartida=HorarioP;
     }
     
-    
+
 
 
 }
