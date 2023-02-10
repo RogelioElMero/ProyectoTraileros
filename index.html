@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LosTraileros</title>
+</head>
+<body>
+    <script src="Persona.js"></script>
+    <script src="Cliente.js"></script>
+    <script src="Empleado.js"></script>
+    <script src="Servicio.js"></script>
+    <script src="Trasporte.js"></script>
+    <script src="main.js"></script>
+    <script src="Ruta.js"></script>
+
+    <table>
+        <tr>
+            <td>
+             <div>
+                <h1>Guardar Vehiculos</h1>
+                 <label for="">Marca del vehiculo</label><br>
+                 <input type="text" name="Marca"><br>
+                    <label for="">Ingrese el tipo de suspencion</label><br>
+                 <input type="text" name="Suspencion"><br>
+                    <label for="">Ingrese la capacidad de carga maxima</label><br>
+                    <input type="text" name="Capacidad"><br>
+                    <label for="">Ingrese la placa del vehiculo</label><br>
+                  <input type="text" name="Placa"><br>
+                   <label for="">Ingrese el numero de serie</label><br>
+                  <input type="text"><br>
+                   <label for="">Ingrese el tipo de tracto que corres ponde</label><br>
+                    <input type="text" name="Tracto"><br>
+                    <button onclick="GuardarTrasporte()">Guardar Trasporte</button>
+              </div>
+         </td>
+         
+        
+
+        <td>
+            <div>
+                <h1>Guardar Empleados</h1>
+              <label for="">Ingrese el Nombre del empleado</label><br>
+              <input type="text" name="NombreE"><br>
+               <label for="">Ingrese el apellido del empleado</label><br>
+               <input type="text" name="ApellidoE"><br>
+                <label for="">Ingrese la Ocupacion del empleado</label><br>
+                <input type="text" name="Ocupacion"><br>
+               <label for="">Ingrese el horario del empleado</label><br>
+               <input type="text" name="Horario"><br>
+                <label for="">Ingrese el Curp del empleado</label><br>
+               <input type="text"name="Curp"><br>
+                <label for="">Ingrese ine del empleado</label><br>
+                <input type="text" name="Ine"><br>
+                <button onclick="GuardarEmpleado()">Guardar Empleado</button>
+              </div>
+            </td>     
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <h1>Guardar Clientes</h1>
+                    <label for="">Ingrese el Nombre del cliente</label><br>
+                    <input type="text" name="NombreC"><br>
+                     <label for="">Ingrese el apellido del cliente</label><br>
+                     <input type="text" name="ApellidoC"><br>
+                      <label for="">Ingrese las referencias del cliente</label><br>
+                      <input type="text" name="referencias"><br>
+                      <button onclick="GuardarCliente()">Guardar Cliente</button>
+                </div>
+
+            </td>
+                
+            <td>
+                <h1>Guardar Servicion</h1>
+                <div>
+                    <label for="">Ingrese el tipo de material</label><br>
+                    <input type="text" name="TipoMat"><br>
+                       <label for="">Ingrese La cantidad de material</label><br>
+                       <input type="text" name="CantidadMat"><br>
+                       <label for="">Ingrese el costo</label><br>
+                       <input type="text" name="Costo"><br>
+                       <button onclick="GuardarServicio()">Guardar servicio</button>
+   
+                </div>
+            </td>
+
+        </tr>
+
+</table>
+
+    
+</body>
+</html>
