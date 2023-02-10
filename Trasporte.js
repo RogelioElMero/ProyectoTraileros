@@ -33,5 +33,34 @@ class Trasporte {
         let ruta=this.Ruta;
         ruta.push(Ruta);
     }
+    /**
+     * 
+     * @param {Float} capacidadCarga 
+     */
+    updateCapacidadCarga=function(capacidadCarga){
+        this.#CapacidadCarga=capacidadCarga;
+    }
+    /**
+     * 
+     * @param {String} placa 
+     */
+    updatePlaca = function(placa){
+        this.#Placa=placa;
+    }
 
+    /**
+     * 
+     * @param {Int} numeroSerie 
+     */
+    updateNumeroSerie= function(numeroSerie){
+        this.#NumeroSerie=numeroSerie;
+    }
+
+    /**
+     * 
+     * @param {String} tipoTracto 
+     */
+    updateTipoTracto=function(tipoTracto){
+        this.#TipoTracto=tipoTracto;
+    }
 }
