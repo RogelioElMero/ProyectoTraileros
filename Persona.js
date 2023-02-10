@@ -11,7 +11,7 @@ class Persona{
 
 		this.Nombre=name;
 		this.Apellido=lastname;
-		this.ID=this.CreateId();
+		this.#ID=this.CreateId();
 
 }
 
