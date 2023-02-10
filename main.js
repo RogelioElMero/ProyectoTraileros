@@ -112,6 +112,8 @@ GuardarRuta=function(){
     ser.setRuta(R);
 
     Rutas.push(R);
+    
+    alert("Ruta guardada exitosamente");
 
     document.getElementById("HorarioS").value=null;
     document.getElementById("HorarioL").value=null;
@@ -121,6 +123,7 @@ GuardarRuta=function(){
     document.getElementById("Cli").value=null;
     document.getElementById("Ser").value=null;
     
+
 }
 
 
