@@ -8,14 +8,11 @@ GuardarTrasporte = function(){
     let Modelo = document.getElementById("Modelo").value;
     let Suspencion= document.getElementById("Suspencion").value;
     let Capacidad=document.getElementById("Capacidad").value;
-    let Placa=document.getElementById().value;
-    let NumeroSerie=document.getElementById().value;
-    let tracto=document.getElementById().value;
-
-
-
-   let Trasporte = new Trasporte();
-
+    let Placa=document.getElementById("Placa").value;
+    let NumeroSerie=document.getElementById("NumeroSerie").value;
+    let Tracto=document.getElementById("Tracto").value;
+  let Trasporte = new Trasporte(Modelo,Suspencion,Capacidad,Placa,NumeroSerie,Tracto);
+    Trasportes.push(Trasporte);
 
 }
 

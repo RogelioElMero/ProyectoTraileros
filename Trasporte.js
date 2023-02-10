@@ -20,7 +20,7 @@ class Trasporte {
         this.Modelo=model;
         this.Suspencion=Suspencion;
         this.#CapacidadCarga=capacidad;
-        this.#placa=placa;
+        this.#Placa=placa;
         this.#NumeroSerie=numeroSerie;
         this.#TipoTracto=tipotracto;
 
