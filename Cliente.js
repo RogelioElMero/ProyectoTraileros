@@ -1,8 +1,14 @@
 class Cliente extends Persona{
     #Referencia;
-    constructor(name,lastname,Referen){
+    /**
+     * 
+     * @param {String} name 
+     * @param {String} lastname 
+     * @param {String} Referen 
+     */
+    constructor(name,lastname,referen){
         super(name,lastname);
-        this.#Referencia=Referen;
+        this.#Referencia=referen;
 
 
     }

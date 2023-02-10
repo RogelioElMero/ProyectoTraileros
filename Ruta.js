@@ -7,10 +7,20 @@ class Ruta{
     Cliente;
     Servicio;
 
-    constructor(HorarioP,HorarioL,Destino){
-        this.#Destino=Destino;
-        this.#HorarioLlegada=HorarioL;
-        this.#HorarioPartida=HorarioP;
+    /**
+     * 
+     * @param {Date} horarioP 
+     * @param {Date} horarioL 
+     * @param {String} destino 
+     * @param {Trasporte} trasporte 
+     * @param {Empleado} empleado 
+     * @param {Cliente} cliente 
+     * @param {Servicio} servicio 
+     */
+    constructor(horarioP,horarioL,destino,trasporte,empleado,cliente,servicio){
+        this.#Destino=destino;
+        this.#HorarioLlegada=horarioL;
+        this.#HorarioPartida=horarioP;
     }
     
 

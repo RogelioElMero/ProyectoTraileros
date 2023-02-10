@@ -4,10 +4,17 @@ class Servicio {
     #Costo;
     Ruta=[];
 
-    constructor(TipoMaterial,CantidadDeMaterial,Costo){
-        this.#TipoMaterial=TipoMaterial;
-        this.#CantidadDeMaterial=CantidadDeMaterial;
-        this.#Costo=Costo;
+
+    /**
+     * 
+     * @param {String} TipoMaterial 
+     * @param {Float} CantidadDeMaterial 
+     * @param {Float} Costo 
+     */
+    constructor(tipoMaterial,cantidadDeMaterial,costo){
+        this.#TipoMaterial=tipoMaterial;
+        this.#CantidadDeMaterial=cantidadDeMaterial;
+        this.#Costo=costo;
     }
 
     /**
@@ -43,7 +50,7 @@ class Servicio {
     updateCosto=function(costo){
         this.#Costo=costo;
     }
-    
+
 
 
     

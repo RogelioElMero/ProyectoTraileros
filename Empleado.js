@@ -4,12 +4,21 @@ class Empleado extends Persona{
     #Curp;
     #Ine;
     Ruta=[];
-    constructor(name,lastname,Ocupacion,Horario,Curp,Ine){
+    /**
+     * 
+     * @param {String} name 
+     * @param {String} lastname 
+     * @param {String} Ocupacion 
+     * @param {Date} Horario 
+     * @param {String} Curp 
+     * @param {String} Ine 
+     */
+    constructor(name,lastname,ocupacion,horario,curp,ine){
         super(name,lastname);
-        this.Ocupacion=Ocupacion;
-        this.#Horario=Horario;
-        this.#Curp=Curp;
-        this.#Ine=Ine;
+        this.Ocupacion=ocupacion;
+        this.#Horario=horario;
+        this.#Curp=curp;
+        this.#Ine=ine;
     }
 
     /**

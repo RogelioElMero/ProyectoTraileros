@@ -5,7 +5,7 @@ var Servicios=[];
 var Empleados=[];
 
 GuardarTrasporte = function(){
-
+let Trasporte = new Trasporte();
 
 
 }
