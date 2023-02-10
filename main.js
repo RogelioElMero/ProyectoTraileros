@@ -11,9 +11,12 @@ GuardarTrasporte = function(){
     let Placa=document.getElementById("Placa").value;
     let NumeroSerie=document.getElementById("NumeroSerie").value;
     let Tracto=document.getElementById("Tracto").value;
-  let Trs = new Trasporte(Modelo,Suspencion,Capacidad,Placa,NumeroSerie,Tracto);
-    Trasportes.push(Trs);
-    alert("Veiculo guardado exitosamente");
+  
+    let trs = new Trasporte(Modelo,Suspencion,Capacidad,Placa,NumeroSerie,Tracto);
+  
+    Trasportes.push(trs);
+
+    alert("Vehiculo guardado exitosamente");
 }
 
 

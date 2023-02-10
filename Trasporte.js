@@ -16,9 +16,9 @@ class Trasporte {
      * @param {Int} numeroSerie 
      * @param {String} tipotracto 
      */
-    Costructor(model,suspencion,capacidad,placa,numeroSerie,tipotracto){
+    constructor(model,suspencion,capacidad,placa,numeroSerie,tipotracto){
         this.Modelo=model;
-        this.Suspencion=Suspencion;
+        this.Suspencion=suspencion;
         this.#CapacidadCarga=capacidad;
         this.#Placa=placa;
         this.#NumeroSerie=numeroSerie;
