@@ -1,9 +1,9 @@
 class Empleado extends Persona{
     Ocupacion;
-    #Horario;
-    #Curp;
-    #Ine;
-    Ruta=[];
+    Horario;
+    Curp;
+    Ine;
+    #Ruta=[];
     /**
      * 
      * @param {String} name 
@@ -16,9 +16,9 @@ class Empleado extends Persona{
     constructor(name,lastname,ocupacion,horario,curp,ine){
         super(name,lastname);
         this.Ocupacion=ocupacion;
-        this.#Horario=horario;
-        this.#Curp=curp;
-        this.#Ine=ine;
+        this.Horario=horario;
+        this.Curp=curp;
+        this.Ine=ine;
     }
 
     /**
@@ -26,32 +26,16 @@ class Empleado extends Persona{
      * @param {Ruta} Ruta 
      */
     setRuta = function(Ruta){
-        let ruta=this.Ruta;
+        let ruta=this.#Ruta;
         ruta.push(Ruta);
     }
-
     /**
      * 
-     * @param {String} horario 
-     */    
-    updateHorario=function(horario){
-        this.#Horario=horario;
-    }
-
-    /**
-     * 
-     * @param {String} curp 
+     * @returns String
      */
-    updateCurp=function(curp){
-        this.#Curp=Curp;
+    readEmpleado = function(){
+        return `${this.ID}-${this.Nombre}-${this.Apellodo}-${this.Ocupacion}-${this.Horario}-${this.Curp}-${this.Ine}`;
     }
-
-    /**
-     * 
-     * @param {String} ine 
-     */
-    updateIne=function(ine){
-        this.#Ine=ine;
-    }
+    
     
 }

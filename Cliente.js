@@ -1,6 +1,6 @@
 class Cliente extends Persona{
-    #Referencia;
-    Ruta=[];
+    Referencia;
+    #Ruta=[];
     /**
      * 
      * @param {String} name 
@@ -9,7 +9,7 @@ class Cliente extends Persona{
      */
     constructor(name,lastname,referencia){
         super(name,lastname);
-        this.#Referencia=referencia;
+        this.Referencia=referencia;
 
 
     }
@@ -20,17 +20,16 @@ class Cliente extends Persona{
      * 
      * @param {Ruta} Ruta 
      */
-    setRuta = function(Ruta){
-        let ruta=this.Ruta;
+    setRuta =function(Ruta){
+        let ruta=this.#Ruta;
         ruta.push(Ruta);
     }
 
-    /**
-     * 
-     * @param {String} referencia 
-     */
-    updateReferencia = function(referencia){
-        this.Referencia=referencia;
+   /**
+    * 
+    * @returns String
+    */
+    readCliente=function(){
+        return `${this.ID}-${this.Nombre}-${this.Apellido}-${this.Referencia}`    
     }
-
 }

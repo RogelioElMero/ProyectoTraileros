@@ -1,8 +1,8 @@
 class Servicio {
     TipoMaterial;
-    #CantidadDeMaterial;
-    #Costo;
-    Ruta=[];
+    CantidadMaterial;
+    Costo;
+    #Ruta=[];
 
 
     /**
@@ -13,8 +13,8 @@ class Servicio {
      */
     constructor(tipoMaterial,cantidadDeMaterial,costo){
         this.TipoMaterial=tipoMaterial;
-        this.#CantidadDeMaterial=cantidadDeMaterial;
-        this.#Costo=costo;
+        this.CantidadDeMaterial=cantidadDeMaterial;
+        this.Costo=costo;
     }
 
     /**
@@ -22,25 +22,17 @@ class Servicio {
      * @param {Ruta} Ruta 
      */
     setRuta = function(Ruta){
-        let ruta=this.Ruta;
+        let ruta=this.#Ruta;
         ruta.push(Ruta);
     }
-
     /**
      * 
-     * @param {Float} cantidadDeMaterial 
+     * @returns String
      */
-    updateCatindadDeMaterial=function(cantidadDeMaterial){
-        this.#CantidadDeMaterial=cantidadDeMaterial;
+    readServicio = function(){
+        return `${this.TipoMaterial}-${this.CantidadMaterial}-${this.Costo}`;
     }
     
-    /**
-     * 
-     * @param {Float} costo 
-     */
-    updateCosto=function(costo){
-        this.#Costo=costo;
-    }
 
 
 

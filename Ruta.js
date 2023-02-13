@@ -1,11 +1,11 @@
 class Ruta{
-    #HorarioPartida;
-    #HorarioLlegada;
-    #Destino;
-    Trasporte;
-    Empleado;
-    Cliente;
-    Servicio;
+    HorarioPartida;
+    HorarioLlegada;
+    Destino;
+    #Trasporte;
+    #Empleado;
+    #Cliente;
+    #Servicio;
 
     /**
      * 
@@ -18,39 +18,45 @@ class Ruta{
      * @param {Servicio} servicio 
      */
     constructor(horarioP,horarioL,destino,trasporte,empleado,cliente,servicio){
-        this.#Destino=destino;
-        this.#HorarioLlegada=horarioL;
-        this.#HorarioPartida=horarioP;
-        this.#Destino=destino;
-        this.Trasporte=trasporte;
-        this.Empleado=empleado;
-        this.Cliente=cliente;
-        this.Servicio=servicio;
+        this.Destino=destino;
+        this.HorarioLlegada=horarioL;
+        this.HorarioPartida=horarioP;
+        this.Destino=destino;
+        this.#Trasporte=trasporte;
+        this.#Empleado=empleado;
+        this.#Cliente=cliente;
+        this.#Servicio=servicio;
     }
-
     /**
      * 
-     * @param {Date} horarioPartida 
+     * @param {Trasporte} Trasporte 
      */
-    updateHorarioPartida=function(horarioPartida){
-        this.#HorarioPartida=horarioPartida;
+    setTrasporte=function(Trasporte){
+        this.#Trasporte=Trasporte;
     }
-
     /**
      * 
-     * @param {Date} horarioLlegada 
+     * @param {Empleado} Empleado 
      */
-    updateHorarioLlegada=function(horarioLlegada){
-        this.#HorarioLlegada=horarioLlegada;
+    setEpleado=function(Empleado){
+        this.#Empleado=Empleado;
     }
-
     /**
      * 
-     * @param {String} destino 
+     * @param {Cliente} Cliente 
      */
-    updateDestino=function(destino){
-        this.#Destino=destino;
+    setCliente=function(Cliente){
+        this.#Cliente=Cliente;
+    }
+    /**
+     * 
+     * @param {Servicio} Servicio 
+     */
+    setServicio=function(Servicio){
+        this.#Servicio=Servicio;
     }
 
-
+    readRuta(){
+        return `${this.HorarioPartida}-${this.HorarioLlegada}-${this.Destino}-${this.#Trasporte}-${this.#Empleado}-${this.#Cliente}-${this.#Servicio}`;
+    }
 }

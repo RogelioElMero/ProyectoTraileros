@@ -4,7 +4,7 @@ var Clientes=[];
 var Servicios=[];
 var Empleados=[];
 
-GuardarTrasporte = function(){
+function GuardarTrasporte(){
     let Modelo = document.getElementById('Modelo').value;
     let Suspencion= document.getElementById("Suspencion").value;
     let Capacidad=document.getElementById("Capacidad").value;
@@ -28,7 +28,7 @@ GuardarTrasporte = function(){
 }
 
 
-GuardarEmpleado = function(){
+function GuardarEmpleado(){
     let Nombre = document.getElementById("NombreE").value;
     let Apellido = document.getElementById("ApellidoE").value;
     let Ocupacion = document.getElementById("Ocupacion").value;
@@ -52,7 +52,7 @@ GuardarEmpleado = function(){
 }
 
 
-GuardarCliente = function(){
+function GuardarCliente(){
     let Nombre = document.getElementById("NombreC").value;
     let Apellido = document.getElementById("ApellidoC").value;
     let Referencia = document.getElementById("Referencias").value;
@@ -70,7 +70,7 @@ GuardarCliente = function(){
 }
 
 
-GuardarServicio = function(){
+function GuardarServicio (){
     let TipoMat = document.getElementById("TipoMat").value; 
     let CantidadMat = document.getElementById("CantidadMat").value;
     let Costo = document.getElementById("Costo").value;
@@ -87,7 +87,7 @@ GuardarServicio = function(){
     mostrarServicioSelc();
 }
 
-GuardarRuta=function(){
+function GuardarRuta(){
     let HorarioPartida = document.getElementById("HorarioS").value;
     let HorarioLlegada = document.getElementById("HorarioL").value;
     let Destino = document.getElementById("Destino").value;
@@ -134,7 +134,7 @@ GuardarRuta=function(){
 
 
 
-mostrarTrasportesSelc=function (){
+function mostrarTrasportesSelc (){
     let options = '<option value="" selected disabled>Seleccione</option>'
     let select =  document.getElementById('Tra');
     select.innerHTML = '';
@@ -145,7 +145,7 @@ mostrarTrasportesSelc=function (){
     select.innerHTML = options;
 }
 
-mostrarEmpleadoSelc=function(){
+function mostrarEmpleadoSelc(){
     let options = '<option value="" selected disabled>Seleccione</option>'
     let select =  document.getElementById('Emp');
     select.innerHTML = '';
@@ -156,7 +156,7 @@ mostrarEmpleadoSelc=function(){
     select.innerHTML = options;
 }
 
-mostrarClienteSelc=function(){
+function mostrarClienteSelc(){
     let options = '<option value="" selected disabled>Seleccione</option>'
     let select =  document.getElementById('Cli');
     select.innerHTML = '';
@@ -167,7 +167,7 @@ mostrarClienteSelc=function(){
     select.innerHTML = options;
 }
 
-mostrarServicioSelc=function(){
+function mostrarServicioSelc(){
     let options = '<option value="" selected disabled>Seleccione</option>'
     let select =  document.getElementById('Ser');
     select.innerHTML = '';
