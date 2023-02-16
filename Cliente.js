@@ -2,7 +2,7 @@ class Cliente extends Persona{
     Referencia;
     #Ruta=[];
     /**
-     * 
+     * t
      * @param {String} name 
      * @param {String} lastname 
      * @param {String} Referen 

@@ -34,7 +34,7 @@ class Empleado extends Persona{
      * @returns String
      */
     readEmpleado = function(){
-        return `${this.ID}-${this.Nombre}-${this.Apellodo}-${this.Ocupacion}-${this.Horario}-${this.Curp}-${this.Ine}`;
+        return `${this.ID}-${this.Nombre}-${this.Apellido}-${this.Ocupacion}-${this.Horario}-${this.Curp}-${this.Ine}`;
     }
     
     

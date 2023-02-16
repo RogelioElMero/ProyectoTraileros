@@ -33,6 +33,8 @@
 
     
     <script src="main.js"></script>
+    <script src="Tablas.js"></script>
+    <script src="Save.js"></script>
     <script src="Persona.js"></script>
     <script src="Cliente.js"></script>
     <script src="Empleado.js"></script>
@@ -59,10 +61,22 @@
                    <label for="">Ingrese el tipo de tracto que corres ponde</label><br>
                     <input type="text" name="Tracto" id="Tracto"><br>
                     <button onclick="GuardarTrasporte()">Guardar Trasporte</button>
+                
               </div>
             </td>
-
-            <td></td>
+            <td>
+                <table class="table" id="tablaTrasportes">
+                    <tr>
+                      <th>MODELO</th>
+                      <th>SUSPENCION</th>
+                      <th>CAPACIDAD</th>
+                      <th>PLACAS</th>
+                      <th>NUMERO DE SERIE</th>
+                      <th>TRACTO</th>
+                    </tr> 
+                </table>
+            </td>
+          
         </tr>
 
         <tr>
@@ -83,7 +97,21 @@
                 <input type="text" name="Ine" id="Ine"><br>
                 <button onclick="GuardarEmpleado()">Guardar Empleado</button>
               </div>
-            </td>     
+            </td>  
+            <td>
+                <table class="table" id="tablaEmpleados">
+                    <tr>
+                      <th>ID<th>  
+                      <th>NOMBRE</th>
+                      <th>APELLIDO</th>
+                      <th>OCUPACION</th>
+                      <th>HORARIO</th>
+                      <th>CURP </th>
+                      <th>INE</th>
+                      </tr>
+                    
+                  </table> 
+            </td>
         </tr>
 
         <tr>
@@ -99,6 +127,17 @@
                       <button onclick="GuardarCliente()">Guardar Cliente</button>
                 </div>
 
+            </td>
+            <td>
+                <table class="table" id="tablaClientes">
+                    <tr>
+                        <th>ID </th>  
+                      <th>NOMBRE CLIENTE </th>
+                      <th>APELLIDO CLIENTE</th>
+                      <th>REFERENCIAS</th>
+                    </tr>
+                    
+                  </table> 
             </td>
         </tr>    
         
@@ -116,6 +155,16 @@
    
                 </div>
             </td>
+            <td>
+                <table class="table" id="tablaServicios">
+                    <tr>
+                      <th>MATERIAL </th>
+                      <th>CANTIDAD</th>
+                      <th>COSTO</th>
+                      </tr>
+                    
+                  </table> 
+            </td>
         </tr>
 
         <tr>
@@ -128,14 +177,28 @@
                        <input type="text" name="HorarioL" id="HorarioL"><br>
                        <label for="">Ingrese el destino a llegar</label><br>
                        <input type="text" name="Destino" id="Destino"><br>
+                       <label for="">ingrese el vehiculo</label>
                        <select name="Tra" id="Tra"></select><br>
+                       <label for="">ingrese el empleado</label>
                        <select name="Emp" id="Emp"></select><br>
+                       <label for="">ingrese el cliente</label>
                        <select name="Cli" id="Cli"></select><br>
+                       <label for="">ingrese el servicio</label>
                        <select name="Ser" id="Ser"></select><br>
 
                        
                        <button onclick="GuardarRuta()">Guardar</button>
                    </div>
+            </td>
+            <td>
+                <table class="table" id="tablaRuta">
+                    <tr>
+                      <th>SALIDA </th>
+                      <th>LLEGADA</th>
+                      <th>DESTINO</th>
+                      </tr>
+                    
+                  </table> 
             </td>
         </tr>
 

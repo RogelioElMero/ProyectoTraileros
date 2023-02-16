@@ -13,7 +13,7 @@ class Servicio {
      */
     constructor(tipoMaterial,cantidadDeMaterial,costo){
         this.TipoMaterial=tipoMaterial;
-        this.CantidadDeMaterial=cantidadDeMaterial;
+        this.CantidadMaterial=cantidadDeMaterial;
         this.Costo=costo;
     }
 

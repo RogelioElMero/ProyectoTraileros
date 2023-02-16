@@ -37,7 +37,8 @@ class Trasporte {
     * 
     * @returns String
     */
-    readTrasporte =function(){
-        return `${this.Modelo}-${this.Suspencion}-${this.CapacidadCarga}-${this.Placa}-${this.NumeroSerie}-${this.TipoTracto}`;
+    readTrasporte (){
+        
+        return  `${this.Modelo}-${this.Suspencion}-${this.CapacidadCarga}-${this.Placa}-${this.NumeroSerie}-${this.TipoTracto}`;
     }
 }
