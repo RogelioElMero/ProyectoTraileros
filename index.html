@@ -9,210 +9,223 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
 <body>
-    <header>
-        <div class="container">
-            <p class="logo">LosTraileros</p>
-            <nav>
-                <a href="">Guardar Vehiculos</a>
-                <a href="">Guardar Empleados</a>
-                <a href="">Guardar Clientes</a>
-                <a href="">Guardar Servicio</a>
-                <a href="">Guardar Rutas</a>
-            </nav>
+
+    <div class="container">
+
+        <div class="text-bg-dark p-3">
+            <div data-bs-theme="dark">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <h1>
+                <center>Los Traileros</center>
+            </h1>
         </div>
-    </header>
-    <section id="hero">
-        <h1>Ingresa Los Datos</h1>
-    </section>
+        <br>
 
-    <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
-        Example element with utilities
+
+        <script src="main.js"></script>
+        <script src="Tool.js"></script>
+        <script src="Tablas.js"></script>
+        <script src="Save.js"></script>
+        <script src="Persona.js"></script>
+        <script src="Cliente.js"></script>
+        <script src="Empleado.js"></script>
+        <script src="Servicio.js"></script>
+        <script src="Trasporte.js"></script>
+        <script src="Ruta.js"></script>
+
+
+        <table>
+            <tr>
+                <td><br>
+                    <div class="card">
+                        <div class="text-bg-dark p-3">
+                            <h1 class="card-header">Guardar Vehiculos</h1>
+                        </div>
+                        <div class="card-body">
+
+                            <label for="">Ingrese el modelo del vehiculo</label><br>
+                            <input type="text" name="Modelo" id="Modelo"><br>
+                            <label for="">Ingrese el tipo de suspencion</label><br>
+                            <input type="text" name="Suspencion" id="Suspencion"><br>
+                            <label for="">Ingrese la capacidad de carga maxima</label><br>
+                            <input type="text" name="Capacidad" id="Capacidad"><br>
+                            <label for="">Ingrese la placa del vehiculo</label><br>
+                            <input type="text" name="Placa" id="Placa"><br>
+                            <label for="">Ingrese el numero de serie</label><br>
+                            <input type="text" name="NumeroSerie" id="NumeroSerie"><br>
+                            <label for="">Ingrese el tipo de tracto que corres ponde</label><br>
+                            <input type="text" name="Tracto" id="Tracto"><br>
+                            <button onclick="GuardarTrasporte()" class="btn btn-dark">Guardar Trasporte</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <table class="table" id="tablaTrasportes">
+                        <tr>
+                            <th>MODELO</th>
+                            <th>SUSPENCION</th>
+                            <th>CAPACIDAD</th>
+                            <th>PLACAS</th>
+                            <th>NUMERO DE SERIE</th>
+                            <th>TRACTO</th>
+                        </tr>
+                    </table>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td><br>
+                    <div class="card">
+                        <div class="text-bg-dark p-3">
+                            <h1 class="card-header">Guardar Empleados</h1>
+                        </div>
+                        <div class="card-body">
+                            <label for="">Ingrese el Nombre del empleado</label><br>
+                            <input type="text" name="NombreE" id="NombreE"><br>
+                            <label for="">Ingrese el apellido del empleado</label><br>
+                            <input type="text" name="ApellidoE" id="ApellidoE"><br>
+                            <label for="">Ingrese la Ocupacion del empleado</label><br>
+                            <input type="text" name="Ocupacion" id="Ocupacion"><br>
+                            <label for="">Ingrese el horario del empleado</label><br>
+                            <input type="text" name="Horario" id="Horario"><br>
+                            <label for="">Ingrese el Curp del empleado</label><br>
+                            <input type="text" name="Curp" id="Curp"><br>
+                            <label for="">Ingrese ine del empleado</label><br>
+                            <input type="text" name="Ine" id="Ine"><br>
+                            <button onclick="GuardarEmpleado()"  class="btn btn-dark">Guardar Empleado</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <table class="table" id="tablaEmpleados">
+                        <tr>
+                            <th>ID
+                            <th>
+                            <th>NOMBRE</th>
+                            <th>APELLIDO</th>
+                            <th>OCUPACION</th>
+                            <th>HORARIO</th>
+                            <th>CURP </th>
+                            <th>INE</th>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td><br>
+                    <div class="card">
+                        <div class="text-bg-dark p-3">
+                            <h1 class="card-header">Guardar Clientes</h1>
+                        </div>
+                        <div class="card-body">
+                            <label for="">Ingrese el Nombre del cliente</label><br>
+                            <input type="text" name="NombreC" id="NombreC"><br>
+                            <label for="">Ingrese el apellido del cliente</label><br>
+                            <input type="text" name="ApellidoC" id="ApellidoC"><br>
+                            <label for="">Ingrese las referencias del cliente</label><br>
+                            <input type="text" name="Referencias" id="Referencias"><br>
+                            <button onclick="GuardarCliente()" class="btn btn-dark">Guardar Cliente</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <table class="table" id="tablaClientes">
+                        <tr>
+                            <th>ID </th>
+                            <th>NOMBRE CLIENTE </th>
+                            <th>APELLIDO CLIENTE</th>
+                            <th>REFERENCIAS</th>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td><br>
+                    <div class="card">
+                        <div class="text-bg-dark p-3">
+                            <h1 class="card-header">Guardar Servicio</h1>
+                        </div>
+                        <div class="card-body">
+                        </div>
+                        <div>
+                            <label for="">Ingrese el tipo de material</label><br>
+                            <input type="text" name="TipoMat" id="TipoMat"><br>
+                            <label for="">Ingrese la cantidad de material</label><br>
+                            <input type="text" name="CantidadMat" id="CantidadMat"><br>
+                            <label for="">Ingrese el costo</label><br>
+                            <input type="text" name="Costo" id="Costo"><br>
+                            <button onclick="GuardarServicio()"  class="btn btn-dark">Guardar servicio</button>
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <table class="table" id="tablaServicios">
+                        <tr>
+                            <th>MATERIAL </th>
+                            <th>CANTIDAD</th>
+                            <th>COSTO</th>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td><br>
+
+                    <div class="card">
+                        <div class="text-bg-dark p-3">
+                            <h1 class="card-header">Guardar Rutas</h1>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <label for="">Ingrese el horario de salida</label><br>
+                                <input type="text" name="HorarioS" id="HorarioS"><br>
+                                <label for="">Ingrese el horario de llegada</label><br>
+                                <input type="text" name="HorarioL" id="HorarioL"><br>
+                                <label for="">Ingrese el destino a llegar</label><br>
+                                <input type="text" name="Destino" id="Destino"><br>
+                                <label for="">ingrese el vehiculo</label>
+                                <select name="Tra" id="Tra"></select><br>
+                                <label for="">ingrese el empleado</label>
+                                <select name="Emp" id="Emp"></select><br>
+                                <label for="">ingrese el cliente</label>
+                                <select name="Cli" id="Cli"></select><br>
+                                <label for="">ingrese el servicio</label>
+                                <select name="Ser" id="Ser"></select><br>
+
+
+                                <button onclick="GuardarRuta()"  class="btn btn-dark">Guardar</button>
+                            </div>
+                        </div>
+                </td>
+                <td>
+                    <table class="table" id="tablaRutas">
+                        <tr>
+                            <th>SALIDA </th>
+                            <th>LLEGADA</th>
+                            <th>DESTINO</th>
+                            <th>TRASPORTE</th>
+                            <th>EMPLEADO</th>
+                            <th>CLIENTE</th>
+                            <th>SERVICIO</th>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+
+        </table>
     </div>
-
-
-    <script src="main.js"></script>
-    <script src="Tool.js"></script>
-    <script src="Tablas.js"></script>
-    <script src="Save.js"></script>
-    <script src="Persona.js"></script>
-    <script src="Cliente.js"></script>
-    <script src="Empleado.js"></script>
-    <script src="Servicio.js"></script>
-    <script src="Trasporte.js"></script>
-    <script src="Ruta.js"></script>
-
-
-    <table>
-        <tr>
-            <td>
-                <div>
-                    <h1>Guardar Vehiculos</h1>
-                    <label for="">Ingrese el modelo del vehiculo</label><br>
-                    <input type="text" name="Modelo" id="Modelo"><br>
-                    <label for="">Ingrese el tipo de suspencion</label><br>
-                    <input type="text" name="Suspencion" id="Suspencion"><br>
-                    <label for="">Ingrese la capacidad de carga maxima</label><br>
-                    <input type="text" name="Capacidad" id="Capacidad"><br>
-                    <label for="">Ingrese la placa del vehiculo</label><br>
-                    <input type="text" name="Placa" id="Placa"><br>
-                    <label for="">Ingrese el numero de serie</label><br>
-                    <input type="text" name="NumeroSerie" id="NumeroSerie"><br>
-                    <label for="">Ingrese el tipo de tracto que corres ponde</label><br>
-                    <input type="text" name="Tracto" id="Tracto"><br>
-                    <button onclick="GuardarTrasporte()">Guardar Trasporte</button>
-
-                </div>
-            </td>
-            <td>
-                <table class="table" id="tablaTrasportes">
-                    <tr>
-                        <th>MODELO</th>
-                        <th>SUSPENCION</th>
-                        <th>CAPACIDAD</th>
-                        <th>PLACAS</th>
-                        <th>NUMERO DE SERIE</th>
-                        <th>TRACTO</th>
-                    </tr>
-                </table>
-            </td>
-
-        </tr>
-
-        <tr>
-            <td>
-                <div>
-                    <h1>Guardar Empleados</h1>
-                    <label for="">Ingrese el Nombre del empleado</label><br>
-                    <input type="text" name="NombreE" id="NombreE"><br>
-                    <label for="">Ingrese el apellido del empleado</label><br>
-                    <input type="text" name="ApellidoE" id="ApellidoE"><br>
-                    <label for="">Ingrese la Ocupacion del empleado</label><br>
-                    <input type="text" name="Ocupacion" id="Ocupacion"><br>
-                    <label for="">Ingrese el horario del empleado</label><br>
-                    <input type="text" name="Horario" id="Horario"><br>
-                    <label for="">Ingrese el Curp del empleado</label><br>
-                    <input type="text" name="Curp" id="Curp"><br>
-                    <label for="">Ingrese ine del empleado</label><br>
-                    <input type="text" name="Ine" id="Ine"><br>
-                    <button onclick="GuardarEmpleado()">Guardar Empleado</button>
-                </div>
-            </td>
-            <td>
-                <table class="table" id="tablaEmpleados">
-                    <tr>
-                        <th>ID
-                        <th>
-                        <th>NOMBRE</th>
-                        <th>APELLIDO</th>
-                        <th>OCUPACION</th>
-                        <th>HORARIO</th>
-                        <th>CURP </th>
-                        <th>INE</th>
-                    </tr>
-
-                </table>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <div>
-                    <h1>Guardar Clientes</h1>
-                    <label for="">Ingrese el Nombre del cliente</label><br>
-                    <input type="text" name="NombreC" id="NombreC"><br>
-                    <label for="">Ingrese el apellido del cliente</label><br>
-                    <input type="text" name="ApellidoC" id="ApellidoC"><br>
-                    <label for="">Ingrese las referencias del cliente</label><br>
-                    <input type="text" name="Referencias" id="Referencias"><br>
-                    <button onclick="GuardarCliente()">Guardar Cliente</button>
-                </div>
-
-            </td>
-            <td>
-                <table class="table" id="tablaClientes">
-                    <tr>
-                        <th>ID </th>
-                        <th>NOMBRE CLIENTE </th>
-                        <th>APELLIDO CLIENTE</th>
-                        <th>REFERENCIAS</th>
-                    </tr>
-
-                </table>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <h1>Guardar Servicio</h1>
-                <div>
-                    <label for="">Ingrese el tipo de material</label><br>
-                    <input type="text" name="TipoMat" id="TipoMat"><br>
-                    <label for="">Ingrese la cantidad de material</label><br>
-                    <input type="text" name="CantidadMat" id="CantidadMat"><br>
-                    <label for="">Ingrese el costo</label><br>
-                    <input type="text" name="Costo" id="Costo"><br>
-                    <button onclick="GuardarServicio()">Guardar servicio</button>
-
-                </div>
-            </td>
-            <td>
-                <table class="table" id="tablaServicios">
-                    <tr>
-                        <th>MATERIAL </th>
-                        <th>CANTIDAD</th>
-                        <th>COSTO</th>
-                    </tr>
-
-                </table>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <h1>Guardar Rutas</h1>
-                <div>
-                    <label for="">Ingrese el horario de salida</label><br>
-                    <input type="text" name="HorarioS" id="HorarioS"><br>
-                    <label for="">Ingrese el horario de llegada</label><br>
-                    <input type="text" name="HorarioL" id="HorarioL"><br>
-                    <label for="">Ingrese el destino a llegar</label><br>
-                    <input type="text" name="Destino" id="Destino"><br>
-                    <label for="">ingrese el vehiculo</label>
-                    <select name="Tra" id="Tra"></select><br>
-                    <label for="">ingrese el empleado</label>
-                    <select name="Emp" id="Emp"></select><br>
-                    <label for="">ingrese el cliente</label>
-                    <select name="Cli" id="Cli"></select><br>
-                    <label for="">ingrese el servicio</label>
-                    <select name="Ser" id="Ser"></select><br>
-
-
-                    <button onclick="GuardarRuta()">Guardar</button>
-                </div>
-            </td>
-            <td>
-                <table class="table" id="tablaRutas">
-                    <tr>
-                        <th>SALIDA </th>
-                        <th>LLEGADA</th>
-                        <th>DESTINO</th>
-                        <th>TRASPORTE</th>
-                        <th>EMPLEADO</th>
-                        <th>CLIENTE</th>
-                        <th>SERVICIO</th>
-                    </tr>
-
-                </table>
-            </td>
-        </tr>
-
-    </table>
-
 
 </body>
 
