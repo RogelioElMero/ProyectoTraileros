@@ -1,6 +1,6 @@
 class Trasporte {
     Modelo;
-    Suspencion;
+    Suspension;
     CapacidadCarga;
     Placa;
     NumeroSerie;
@@ -10,15 +10,15 @@ class Trasporte {
     /**
      * 
      * @param {String} model 
-     * @param {String} suspencion 
+     * @param {String} suspension 
      * @param {Float} capacidad 
      * @param {String} placa 
      * @param {Int} numeroSerie 
      * @param {String} tipotracto 
      */
-    constructor(model,suspencion,capacidad,placa,numeroSerie,tipotracto){
+    constructor(model,suspension,capacidad,placa,numeroSerie,tipotracto){
         this.Modelo=model;
-        this.Suspencion=suspencion;
+        this.Suspension=suspension;
         this.CapacidadCarga=capacidad;
         this.Placa=placa;
         this.NumeroSerie=numeroSerie;
@@ -39,6 +39,6 @@ class Trasporte {
     */
     readTrasporte (){
         
-        return  `${this.Modelo}-${this.Suspencion}-${this.CapacidadCarga}-${this.Placa}-${this.NumeroSerie}-${this.TipoTracto}`;
+        return  `${this.Modelo}-${this.Suspension}-${this.CapacidadCarga}-${this.Placa}-${this.NumeroSerie}-${this.TipoTracto}`;
     }
 }

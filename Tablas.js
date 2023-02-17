@@ -1,90 +1,114 @@
 //tabla para mostrar los Trasportes 
-function tablaTrasportes() {
+function tableTrasportes() {
+    //crea los encabezados de la tabla y se optiene la poision 
     let contTabla = '<tr><th>MODELO</th><th>SUSPENCION</th><th>CAPACIDAD</th><th>PLACAS</th><th>NUMERO DE SERIE</th><th>TRACTO</th></tr>';
-    let Tabla = document.getElementById('tablaTrasportes');
+    let Tabla = document.getElementById('tableTrasportes');
 
-    document.getElementById('tablaTrasportes').innerHTML = null;
+    //elimina temporalmente la tabla
+    document.getElementById('tableTrasportes').innerHTML = null;
 
     let trasporte;
     let array;
 
+    //lee las posiciones del arreglo y concatena las filas  
     for (let i = 0; i < Trasportes.length; i++) {
         trasporte = Trasportes[i].readTrasporte();
         array = trasporte.split('-');
         contTabla += `<tr><td>${array[0]}</td> <td>${array[1]}</td> <td>${array[2]}</td> <td>${array[3]}</td> <td>${array[4]}</td> <td>${array[5]}</td></tr>`;
     }
 
+    //muestra toda la tabla creada en su posicion 
     Tabla.innerHTML = contTabla;
 }
 
-function tablaEmpleados() {
+//tabla para mostrar los Empleados
+function tableEmpleados() {
+    //crea los encabezados de la tabla y se optiene la poision
     let contTabla = '<tr> <th>ID</th> <th>NOMBRE</th> <th>APELLIDO</th> <th>OCUPACION</th> <th>HORARIO</th> <th>CURP</th> <th>INE</th> </tr>';
-    let Tabla = document.getElementById('tablaEmpleados');
+    let Tabla = document.getElementById('tableEmpleados');
 
-    document.getElementById('tablaEmpleados').innerHTML = null;
+    //elimina temporalmente la tabla
+    document.getElementById('tableEmpleados').innerHTML = null;
 
     let empleado;
     let array;
 
+    //lee las posiciones del arreglo y concatena las filas 
     for (let i = 0; i < Empleados.length; i++) {
         empleado = Empleados[i].readEmpleado();
         array = empleado.split('-');
         contTabla += `<tr><td>${array[0]}</td> <td>${array[1]}</td> <td>${array[2]}</td> <td>${array[3]}</td> <td>${array[4]}</td> <td>${array[5]}</td> <td>${array[6]}</td> </tr>`;
     }
 
+    //muestra toda la tabla creada en su posicion 
     Tabla.innerHTML = contTabla;
 }
 
-function tablaClientes() {
+//tabla para mostrar los Clientes
+function tableClientes() {
+    //crea los encabezados de la tabla y se optiene la poision
     let contTabla = '<tr> <th>ID</th> <th>NOMBRE CLIENTE</th> <th>APELLIDO CLIENTE</th> <th>REFERENCIAS</th> </tr>';
-    let Tabla = document.getElementById('tablaClientes');
+    let Tabla = document.getElementById('tableClientes');
 
-    document.getElementById('tablaClientes').innerHTML = null;
+    //elimina temporalmente la tabla
+    document.getElementById('tableClientes').innerHTML = null;
 
     let clientes;
     let array;
 
+    //lee las posiciones del arreglo y concatena las filas 
     for (let i = 0; i < Clientes.length; i++) {
         clientes = Clientes[i].readCliente();
         array = clientes.split('-');
         contTabla += `<tr><td>${array[0]}</td> <td>${array[1]}</td> <td>${array[2]}</td> <td>${array[3]}</td> </tr>`;
     }
 
+    //muestra toda la tabla creada en su posicion 
     Tabla.innerHTML = contTabla;
 }
 
-function tablaServicios() {
+//tabla para mostrar los Servicios
+function tableServicios() {
+    //crea los encabezados de la tabla y se optiene la poision
     let contTabla = '<tr> <th>MATERIAL </th> <th>CANTIDAD</th> <th>COSTO</th> </tr>';
-    let Tabla = document.getElementById('tablaServicios');
+    let Tabla = document.getElementById('tableServicios');
 
-    document.getElementById('tablaServicios').innerHTML = null;
+    //elimina temporalmente la tabla
+    document.getElementById('tableServicios').innerHTML = null;
 
     let servicios;
     let array;
 
+    //lee las posiciones del arreglo y concatena las filas 
     for (let i = 0; i < Servicios.length; i++) {
         servicios = Servicios[i].readServicio();
         array = servicios.split('-');
         contTabla += `<tr> <td>${array[0]}</td> <td>${array[1]}</td> <td>${array[2]}</td> </tr>`;
     }
 
+    //muestra toda la tabla creada en su posicion 
     Tabla.innerHTML = contTabla;
 }
 
-function tablaRutas() {
+//funcion para mostrar las Rutas
+function tableRutas() {
+    //crea los encabezados de la tabla y se optiene la poision
     let contTabla = '<tr> <th>SALIDA </th> <th>LLEGADA</th> <th>DESTINO</th> <th>TRASPORTE</th> <th>EMPLEADO</th> <th>CLIENTE</th> <th>SERVICIO</th> </tr>';
-    let Tabla = document.getElementById('tablaRutas');
+    let Tabla = document.getElementById('tableRutas');
 
-    document.getElementById('tablaRutas').innerHTML = null;
+    //elimina temporalmente la tabla
+    document.getElementById('tableRutas').innerHTML = null;
 
     let rutas;
     let array;
 
+    //lee las posiciones del arreglo y concatena las filas 
     for (let i = 0; i < Rutas.length; i++) {
         rutas = Rutas[i].readRuta();
         array = rutas.split('-');
         contTabla += `<tr> <td>${array[0]}</td> <td>${array[1]}</td> <td>${array[2]}</td> <td>${array[3]}</td> <td>${array[4]}</td> <td>${array[5]}</td> <td>${array[6]}</td> </tr>`;
     }
 
+    //muestra toda la tabla creada en su posicion 
     Tabla.innerHTML = contTabla;
 }

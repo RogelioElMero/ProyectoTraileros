@@ -47,26 +47,26 @@
                         <div class="card-body">
 
                             <label for="">Ingrese el modelo del vehiculo</label><br>
-                            <input type="text" name="Modelo" id="Modelo"><br>
-                            <label for="">Ingrese el tipo de suspencion</label><br>
-                            <input type="text" name="Suspencion" id="Suspencion"><br>
+                            <input type="text" name="Model" id="Model"><br>
+                            <label for="">Ingrese el tipo de suspensión</label><br>
+                            <input type="text" name="Suspension" id="Suspension"><br>
                             <label for="">Ingrese la capacidad de carga maxima</label><br>
-                            <input type="text" name="Capacidad" id="Capacidad"><br>
+                            <input type="text" name="Capacity" id="Capacity"><br>
                             <label for="">Ingrese la placa del vehiculo</label><br>
-                            <input type="text" name="Placa" id="Placa"><br>
+                            <input type="text" name="Plate" id="Plate"><br>
                             <label for="">Ingrese el numero de serie</label><br>
-                            <input type="text" name="NumeroSerie" id="NumeroSerie"><br>
+                            <input type="text" name="SerialNumber" id="SerialNumber"><br>
                             <label for="">Ingrese el tipo de tracto que corres ponde</label><br>
-                            <input type="text" name="Tracto" id="Tracto"><br>
-                            <button onclick="GuardarTrasporte()" class="btn btn-dark">Guardar Trasporte</button>
+                            <input type="text" name="Tract" id="Tract"><br>
+                            <button onclick="saveTrasporte()" class="btn btn-dark">Guardar Trasporte</button>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <table class="table" id="tablaTrasportes">
+                    <table class="table" id="tableTrasportes">
                         <tr>
                             <th>MODELO</th>
-                            <th>SUSPENCION</th>
+                            <th>SUSPENSION</th>
                             <th>CAPACIDAD</th>
                             <th>PLACAS</th>
                             <th>NUMERO DE SERIE</th>
@@ -85,23 +85,23 @@
                         </div>
                         <div class="card-body">
                             <label for="">Ingrese el Nombre del empleado</label><br>
-                            <input type="text" name="NombreE" id="NombreE"><br>
+                            <input type="text" name="NameE" id="NameE"><br>
                             <label for="">Ingrese el apellido del empleado</label><br>
-                            <input type="text" name="ApellidoE" id="ApellidoE"><br>
+                            <input type="text" name="LastnameE" id="LastnameE"><br>
                             <label for="">Ingrese la Ocupacion del empleado</label><br>
-                            <input type="text" name="Ocupacion" id="Ocupacion"><br>
+                            <input type="text" name="Occupation" id="Occupation"><br>
                             <label for="">Ingrese el horario del empleado</label><br>
-                            <input type="text" name="Horario" id="Horario"><br>
+                            <input type="text" name="Schedule" id="Schedule"><br>
                             <label for="">Ingrese el Curp del empleado</label><br>
                             <input type="text" name="Curp" id="Curp"><br>
                             <label for="">Ingrese ine del empleado</label><br>
                             <input type="text" name="Ine" id="Ine"><br>
-                            <button onclick="GuardarEmpleado()"  class="btn btn-dark">Guardar Empleado</button>
+                            <button onclick="saveEmpleado()"  class="btn btn-dark">Guardar Empleado</button>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <table class="table" id="tablaEmpleados">
+                    <table class="table" id="tableEmpleados">
                         <tr>
                             <th>ID
                             <th>
@@ -125,17 +125,17 @@
                         </div>
                         <div class="card-body">
                             <label for="">Ingrese el Nombre del cliente</label><br>
-                            <input type="text" name="NombreC" id="NombreC"><br>
+                            <input type="text" name="NameC" id="NameC"><br>
                             <label for="">Ingrese el apellido del cliente</label><br>
-                            <input type="text" name="ApellidoC" id="ApellidoC"><br>
+                            <input type="text" name="LastnameC" id="LastnameC"><br>
                             <label for="">Ingrese las referencias del cliente</label><br>
-                            <input type="text" name="Referencias" id="Referencias"><br>
+                            <input type="text" name="References" id="References"><br>
                             <button onclick="GuardarCliente()" class="btn btn-dark">Guardar Cliente</button>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <table class="table" id="tablaClientes">
+                    <table class="table" id="tableClientes">
                         <tr>
                             <th>ID </th>
                             <th>NOMBRE CLIENTE </th>
@@ -157,18 +157,18 @@
                         </div>
                         <div>
                             <label for="">Ingrese el tipo de material</label><br>
-                            <input type="text" name="TipoMat" id="TipoMat"><br>
+                            <input type="text" name="TypeMaterial" id="TypeMaterial"><br>
                             <label for="">Ingrese la cantidad de material</label><br>
-                            <input type="text" name="CantidadMat" id="CantidadMat"><br>
+                            <input type="text" name="AmountMaterial" id="AmountMaterial"><br>
                             <label for="">Ingrese el costo</label><br>
-                            <input type="text" name="Costo" id="Costo"><br>
+                            <input type="text" name="Cost" id="Cost"><br>
                             <button onclick="GuardarServicio()"  class="btn btn-dark">Guardar servicio</button>
 
                         </div>
                     </div>
                 </td>
                 <td>
-                    <table class="table" id="tablaServicios">
+                    <table class="table" id="tableServicios">
                         <tr>
                             <th>MATERIAL </th>
                             <th>CANTIDAD</th>
@@ -189,11 +189,11 @@
                         <div class="card-body">
                             <div>
                                 <label for="">Ingrese el horario de salida</label><br>
-                                <input type="text" name="HorarioS" id="HorarioS"><br>
+                                <input type="text" name="ScheduleExit" id="ScheduleExit"><br>
                                 <label for="">Ingrese el horario de llegada</label><br>
-                                <input type="text" name="HorarioL" id="HorarioL"><br>
+                                <input type="text" name="SchedulArrive" id="SchedulArrive"><br>destiny
                                 <label for="">Ingrese el destino a llegar</label><br>
-                                <input type="text" name="Destino" id="Destino"><br>
+                                <input type="text" name="Destiny" id="Destiny"><br>
                                 <label for="">ingrese el vehiculo</label>
                                 <select name="Tra" id="Tra"></select><br>
                                 <label for="">ingrese el empleado</label>
@@ -209,7 +209,7 @@
                         </div>
                 </td>
                 <td>
-                    <table class="table" id="tablaRutas">
+                    <table class="table" id="tableRutas">
                         <tr>
                             <th>SALIDA </th>
                             <th>LLEGADA</th>

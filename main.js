@@ -1,3 +1,4 @@
+//areglos que funcionaran como tipo base de datos en todo el programa 
 var Rutas = [];
 var Trasportes = [];
 var Clientes = [];
@@ -15,7 +16,7 @@ var Empleados = [];
 
 
 
-
+//llena los campos faltantes de trasportes en rutas para escojer uno 
 function SelecTrasportes() {
     let options = '<option value="" selected disabled>Seleccione</option>'
     let select = document.getElementById('Tra');
@@ -27,6 +28,7 @@ function SelecTrasportes() {
     select.innerHTML = options;
 }
 
+//llena los campos faltantes de empleado en rutas para escojer uno
 function SelecEmpleados() {
     let options = '<option value="" selected disabled>Seleccione</option>'
     let select = document.getElementById('Emp');
@@ -38,6 +40,7 @@ function SelecEmpleados() {
     select.innerHTML = options;
 }
 
+//llena los campos faltantes de clientes en rutas para escojer uno
 function SelecClientes() {
     let options = '<option value="" selected disabled>Seleccione</option>'
     let select = document.getElementById('Cli');
@@ -49,6 +52,7 @@ function SelecClientes() {
     select.innerHTML = options;
 }
 
+//llena los campos faltantes de servicios en rutas para escojer uno
 function SelecServicios() {
     let options = '<option value="" selected disabled>Seleccione</option>'
     let select = document.getElementById('Ser');
