@@ -1,8 +1,8 @@
-var Rutas=[];
-var Trasportes=[];
-var Clientes=[];
-var Servicios=[];
-var Empleados=[];
+var Rutas = [];
+var Trasportes = [];
+var Clientes = [];
+var Servicios = [];
+var Empleados = [];
 
 
 
@@ -16,44 +16,44 @@ var Empleados=[];
 
 
 
-function SelecTrasportes(){
+function SelecTrasportes() {
     let options = '<option value="" selected disabled>Seleccione</option>'
-    let select =  document.getElementById('Tra');
+    let select = document.getElementById('Tra');
     select.innerHTML = '';
-    for(let i = 0; i<Trasportes.length; i++){
+    for (let i = 0; i < Trasportes.length; i++) {
         options += `<option value="${i}">${Trasportes[i].Modelo}</option>`;
     }
 
     select.innerHTML = options;
 }
 
-function SelecEmpleados(){
+function SelecEmpleados() {
     let options = '<option value="" selected disabled>Seleccione</option>'
-    let select =  document.getElementById('Emp');
+    let select = document.getElementById('Emp');
     select.innerHTML = '';
-    for(let i = 0; i<Empleados.length; i++){
+    for (let i = 0; i < Empleados.length; i++) {
         options += `<option value="${i}">${Empleados[i].Nombre}</option>`;
     }
 
     select.innerHTML = options;
 }
 
-function SelecClientes(){
+function SelecClientes() {
     let options = '<option value="" selected disabled>Seleccione</option>'
-    let select =  document.getElementById('Cli');
+    let select = document.getElementById('Cli');
     select.innerHTML = '';
-    for(let i = 0; i<Clientes.length; i++){
+    for (let i = 0; i < Clientes.length; i++) {
         options += `<option value="${i}">${Clientes[i].Nombre}</option>`;
     }
 
     select.innerHTML = options;
 }
 
-function SelecServicios(){
+function SelecServicios() {
     let options = '<option value="" selected disabled>Seleccione</option>'
-    let select =  document.getElementById('Ser');
+    let select = document.getElementById('Ser');
     select.innerHTML = '';
-    for(let i = 0; i<Servicios.length; i++){
+    for (let i = 0; i < Servicios.length; i++) {
         options += `<option value="${i}">${Servicios[i].TipoMaterial}</option>`;
     }
 
