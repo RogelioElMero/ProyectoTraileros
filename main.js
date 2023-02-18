@@ -1,11 +1,22 @@
 //areglos que funcionaran como tipo base de datos en todo el programa 
-var Rutas = [];
-var Trasportes = [];
+var Rutas =  [];//Tool.getDataRutasFromLocalStorage("Rutas");
+var Trasportes;
+if(localStorage.getItem("Trasportes")!=null){
+    Trasportes = Tool.getDataTrasportesFromLocalStorage();
+    tableTrasportes();
+}else{
+    Trasportes = [];
+}
+
 var Clientes = [];
 var Servicios = [];
 var Empleados = [];
 
 
+//tableEmpleados();
+//tableServicios();
+//tableRutas();
+//tableClientes();
 
 
 

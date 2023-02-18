@@ -10,12 +10,21 @@ function saveTrasporte() {
     let SerialNumber = document.getElementById("SerialNumber").value;
     let Tract = document.getElementById("Tract").value;
 
+
+
+
     //se declara un object tipo trasporte
     let trs = new Trasporte(Model, Suspension, Capacity, Plate, SerialNumber, Tract);
     
     //guarda el Trasporte en un arreglo en main 
     Trasportes.push(trs);
+
+    //guardar en local storage
+    Tool.setDataToLocalStorage("Trasportes",Trasportes);
+ 
+
     alert("Vehiculo guardado exitosamente");
+
     //resetea los input
     document.getElementById('Model').value = null;
     document.getElementById("Suspension").value = null;
@@ -28,7 +37,6 @@ function saveTrasporte() {
     SelecTrasportes();
     tableTrasportes();
     
-    Tool.setDataToLocalStorage("Trasportes", Trasportes);
 
 }
 
@@ -46,8 +54,11 @@ function saveEmpleado() {
     //se declara un object tipo empleado
     let Emp = new Empleado(NameE, LastnameE, Occupation, Schedule, Curp, Ine);
 
+    Tool.setDataToLocalStorage("Empleados",Empleados);
+
     //guarda el Empleado en un arreglo
     Empleados.push(Emp);
+   
     alert("Empleado guardado exitosamente");
     //resetea los input
     document.getElementById('NameE').value = null;
@@ -141,6 +152,11 @@ function GuardarRuta() {
 
     //guarda la Ruta en un arreglo en main 
     Rutas.push(R);
+    
+    //guardar en local Storage
+    Tool.setDataToLocalStorage("Rutas",Rutas);
+
+
 
     alert("Ruta guardada exitosamente");
 
@@ -155,4 +171,6 @@ function GuardarRuta() {
 
     //funcion para llenar la tabla de rutas
     tableRutas();
+
+
 }

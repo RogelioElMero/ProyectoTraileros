@@ -5,7 +5,7 @@ function tableTrasportes() {
     let Tabla = document.getElementById('tableTrasportes');
 
     //elimina temporalmente la tabla
-    document.getElementById('tableTrasportes').innerHTML = null;
+    Tabla.innerHTML= '';
 
     let trasporte;
     let array;
@@ -97,7 +97,7 @@ function tableRutas() {
     let Tabla = document.getElementById('tableRutas');
 
     //elimina temporalmente la tabla
-    document.getElementById('tableRutas').innerHTML = null;
+   // document.getElementById('tableRutas').innerHTML = '';
 
     let rutas;
     let array;
