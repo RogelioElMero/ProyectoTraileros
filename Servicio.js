@@ -1,4 +1,5 @@
 class Servicio {
+    ID;
     TipoMaterial;
     CantidadMaterial;
     Costo;
@@ -30,8 +31,17 @@ class Servicio {
      * @returns String
      */
     readServicio = function(){
-        return `${this.TipoMaterial}-${this.CantidadMaterial}-${this.Costo}`;
+        return `${this.ID}-${this.TipoMaterial}-${this.CantidadMaterial}-${this.Costo}`;
     }
+    
+    /**
+	 * 
+	 * @returns Int
+	 */
+	createId=function(){
+        return Math.floor(Math.random() * 10000);
+	}
+
     
 
 

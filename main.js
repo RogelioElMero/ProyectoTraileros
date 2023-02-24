@@ -1,30 +1,9 @@
 //areglos que funcionaran como tipo base de datos en todo el programa 
-var Rutas =  [];//Tool.getDataRutasFromLocalStorage("Rutas");
-var Trasportes;
-if(localStorage.getItem("Trasportes")!=null){
-    Trasportes = Tool.getDataTrasportesFromLocalStorage();
-    tableTrasportes();
-}else{
-    Trasportes = [];
-}
-
-var Clientes = [];
-var Servicios = [];
-var Empleados = [];
-
-
-//tableEmpleados();
-//tableServicios();
-//tableRutas();
-//tableClientes();
-
-
-
-
-
-
-
-
+var Rutas = Tool.getDataRutasFromLocalStorage("Rutas");
+var Trasportes = Tool.getDataTrasportesFromLocalStorage("Trasportes");
+var Clientes = Tool.getDataClientesFromLocalStorage("Clientes");
+var Servicios = Tool.getDataServicioosFromLocalStorage("Servicios");
+var Empleados =Tool.getDataEmpleadosFromLocalStorage("Empleados") ;
 
 
 //llena los campos faltantes de trasportes en rutas para escojer uno 

@@ -11,8 +11,6 @@ class Persona{
 
 		this.Nombre=name;
 		this.Apellido=lastname;
-		this.ID=this.CreateId();
-
 }
 
 
@@ -20,8 +18,8 @@ class Persona{
 	 * 
 	 * @returns Int
 	 */
-	CreateId=function(){
-        return Math.floor(Math.random() * 1000);
+	createId=function(){
+        return Math.floor(Math.random() * 10000);
 	}
 
 

@@ -11,18 +11,16 @@
 </head>
 
 <body>
-     
         <script src="Trasporte.js"></script>
+        <script src="Tablas.js"></script>
+        <script src="Save.js"></script>
         <script src="Persona.js"></script>
         <script src="Cliente.js"></script>
         <script src="Empleado.js"></script>
         <script src="Servicio.js"></script>
         <script src="Ruta.js"></script>
-        <script src="Tablas.js"></script>
-        <script src="Save.js"></script>
         <script src="Tool.js"></script>
         <script src="main.js"></script>
-        
         
        
 
@@ -68,14 +66,16 @@
                 </td>
                 <td>
                     <table class="table" id="tableTrasportes">
-                        <tr>
+                        <thead>
+                            <th>ID</th>
                             <th>MODELO</th>
                             <th>SUSPENSION</th>
                             <th>CAPACIDAD</th>
                             <th>PLACAS</th>
                             <th>NUMERO DE SERIE</th>
                             <th>TRACTO</th>
-                        </tr>
+                        </thead>
+                        <tbody id="tableBodyTrasportes"></tbody>
                     </table>
                 </td>
 
@@ -106,16 +106,16 @@
                 </td>
                 <td>
                     <table class="table" id="tableEmpleados">
-                        <tr>
-                            <th>ID
-                            <th>
+                        <thead>
+                            <th>ID</th>
                             <th>NOMBRE</th>
                             <th>APELLIDO</th>
                             <th>OCUPACION</th>
                             <th>HORARIO</th>
-                            <th>CURP </th>
+                            <th>CURP</th>
                             <th>INE</th>
-                        </tr>
+                        </thead>
+                        <tbody id="tableBodyEmpledos"></tbody>
 
                     </table>
                 </td>
@@ -140,13 +140,13 @@
                 </td>
                 <td>
                     <table class="table" id="tableClientes">
-                        <tr>
-                            <th>ID </th>
-                            <th>NOMBRE CLIENTE </th>
+                        <thead>
+                            <th>ID</th>
+                            <th>NOMBRE CLIENTE</th>
                             <th>APELLIDO CLIENTE</th>
                             <th>REFERENCIAS</th>
-                        </tr>
-
+                        </thead>
+                        <tbody id="tableBodyClientes"></tbody>
                     </table>
                 </td>
             </tr>
@@ -173,11 +173,13 @@
                 </td>
                 <td>
                     <table class="table" id="tableServicios">
-                        <tr>
+                        <thead>
+                            <th>ID</th>
                             <th>MATERIAL </th>
                             <th>CANTIDAD</th>
                             <th>COSTO</th>
-                        </tr>
+                        </thead>
+                        <tbody id="tableBodyServicios"></tbody>
 
                     </table>
                 </td>
@@ -214,23 +216,25 @@
                 </td>
                 <td>
                     <table class="table" id="tableRutas">
-                        <tr>
-                            <th>SALIDA </th>
+                        <thead>
+                            <th>ID</th>
+                            <th>SALIDA</th>
                             <th>LLEGADA</th>
                             <th>DESTINO</th>
                             <th>TRASPORTE</th>
                             <th>EMPLEADO</th>
                             <th>CLIENTE</th>
                             <th>SERVICIO</th>
-                        </tr>
-
+                        </thead>
+                        <tbody id="tableBodyRutas"></tbody>
                     </table>
+
                 </td>
             </tr>
 
         </table>
     </div>
-   
+
 </body>
 
 </html>

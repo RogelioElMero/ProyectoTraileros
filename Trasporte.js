@@ -1,4 +1,5 @@
 class Trasporte {
+    ID;
     Modelo;
     Suspension;
     CapacidadCarga;
@@ -37,8 +38,18 @@ class Trasporte {
     * 
     * @returns String
     */
-    readTrasporte (){
+    readTrasporte =function(){
         
-        return  `${this.Modelo}-${this.Suspension}-${this.CapacidadCarga}-${this.Placa}-${this.NumeroSerie}-${this.TipoTracto}`;
+        return  `${this.ID}-${this.Modelo}-${this.Suspension}-${this.CapacidadCarga}-${this.Placa}-${this.NumeroSerie}-${this.TipoTracto}`;
     }
+
+   	/**
+	 * 
+	 * @returns Int
+	 */
+	createId=function(){
+        return Math.floor(Math.random() * 10000);
+	}
+
+
 }

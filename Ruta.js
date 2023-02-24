@@ -1,4 +1,5 @@
 class Ruta {
+    ID;
     HorarioPartida;
     HorarioLlegada;
     Destino;
@@ -56,7 +57,23 @@ class Ruta {
         this.#Servicio = Servicio;
     }
 
-    readRuta() {
-        return `${this.HorarioPartida}-${this.HorarioLlegada}-${this.Destino}-${this.#Trasporte.Placa}-${this.#Empleado.Nombre}-${this.#Cliente.Nombre}-${this.#Servicio.Costo}`;
+
+    /**
+     * 
+     * @returns String
+     */
+    readRuta=function() {
+        return `${this.ID}-${this.HorarioPartida}-${this.HorarioLlegada}-${this.Destino}-${this.#Trasporte.Placa}-${this.#Empleado.Nombre}-${this.#Cliente.Nombre}-${this.#Servicio.Costo}`;
     }
+    
+    /**
+	 * 
+	 * @returns Int
+	 */
+	createId=function(){
+        return Math.floor(Math.random() * 10000);
+	}
+
+
+    
 }

@@ -14,17 +14,14 @@ function saveTrasporte() {
 
 
     //se declara un object tipo trasporte
-    let trs = new Trasporte(Model, Suspension, Capacity, Plate, SerialNumber, Tract);
-    
+    let Trs = new Trasporte(Model, Suspension, Capacity, Plate, SerialNumber, Tract);
+    Trs.ID=Trs.createId();
     //guarda el Trasporte en un arreglo en main 
-    Trasportes.push(trs);
+    Trasportes.push(Trs);
 
-    //guardar en local storage
     Tool.setDataToLocalStorage("Trasportes",Trasportes);
- 
 
     alert("Vehiculo guardado exitosamente");
-
     //resetea los input
     document.getElementById('Model').value = null;
     document.getElementById("Suspension").value = null;
@@ -53,13 +50,15 @@ function saveEmpleado() {
 
     //se declara un object tipo empleado
     let Emp = new Empleado(NameE, LastnameE, Occupation, Schedule, Curp, Ine);
-
-    Tool.setDataToLocalStorage("Empleados",Empleados);
-
+    Emp.ID=Emp.createId();
+    
     //guarda el Empleado en un arreglo
     Empleados.push(Emp);
-   
+    
+    //guardarlo  en el local storage
+    Tool.setDataToLocalStorage("Empleados",Empleados);
     alert("Empleado guardado exitosamente");
+    
     //resetea los input
     document.getElementById('NameE').value = null;
     document.getElementById('LastnameE').value = null;
@@ -82,9 +81,10 @@ function GuardarCliente() {
 
     //se declara un object tipo cliente
     let Cln = new Cliente(NameC, LastnameC, References);
-
+    Cln.ID=Cln.createId();
     //guarda el Cliente en un arreglo en main 
     Clientes.push(Cln);
+    Tool.setDataToLocalStorage("Clientes",Clientes);
     alert("Cliente guardado exitosamente");
     //resetea los input
     document.getElementById('NameC').value = null;
@@ -105,9 +105,10 @@ function GuardarServicio() {
 
     //se declara un object tipo servicio    
     let Srv = new Servicio(TypeMaterial, AmountMaterial, Cost);
-
+    Srv.ID=Srv.createId();
     //guarda el Servicio en un arreglo en main  
     Servicios.push(Srv);
+    Tool.setDataToLocalStorage("Servicios",Servicios);
     alert("Servicio guardado exitosamente");
     //resetea los input
     document.getElementById('TypeMaterial').value = null;
@@ -142,7 +143,8 @@ function GuardarRuta() {
 
     //se declara un object se tipo ruta
     let R = new Ruta(ScheduleExit, SchedulArrive, Destiny, tras, emp, cli, ser);
-
+        R.ID=R.createId();
+        
     //llama las funciones set de cada tipo para guardar una ruta en los demas ibjetos creados y crear la relacion marcada en el diagrama 
     tras.setRuta(R);
     emp.setRuta(R);
@@ -152,8 +154,7 @@ function GuardarRuta() {
 
     //guarda la Ruta en un arreglo en main 
     Rutas.push(R);
-    
-    //guardar en local Storage
+
     Tool.setDataToLocalStorage("Rutas",Rutas);
 
 
