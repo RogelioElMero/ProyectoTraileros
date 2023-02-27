@@ -2,7 +2,7 @@
 //tabla para mostrar los Trasportes 
 function tableTrasportes() {
     //crea los encabezados de la tabla y se optiene la poision 
-    let contTabla;
+    let contTabla='';
     let Tabla = document.getElementById('tableBodyTrasportes');
 
     if(Trasportes.length>0){
@@ -24,7 +24,7 @@ function tableTrasportes() {
 //tabla para mostrar los Empleados
 function tableEmpleados() {
     //crea los encabezados de la tabla y se optiene la poision
-    let contTabla ;
+    let contTabla ='';
     let Tabla = document.getElementById('tableBodyEmpledos');
 
     if(Empleados.length>0){
@@ -47,7 +47,7 @@ function tableEmpleados() {
 //tabla para mostrar los Clientes
 function tableClientes() {
     //crea los encabezados de la tabla y se optiene la poision
-    let contTabla ;
+    let contTabla ='';
     let Tabla = document.getElementById('tableBodyClientes');
 
     if(Clientes.length>0){
@@ -59,7 +59,7 @@ function tableClientes() {
     for (let i = 0; i < Clientes.length; i++) {
         clientes = Clientes[i].readCliente();
         array = clientes.split('-');
-        contTabla += `<tr><td>${array[0]}</td> <td>${array[1]}</td> <td>${array[2]}</td> <td>${array[3]}</td> <td>${array[4]}</td> </tr>`;
+        contTabla += `<tr><td>${array[0]}</td> <td>${array[1]}</td> <td>${array[2]}</td> <td>${array[3]}</td> </tr>`;
     }
 
     //muestra toda la tabla creada en su posicion 
@@ -70,7 +70,7 @@ function tableClientes() {
 //tabla para mostrar los Servicios
 function tableServicios() {
     //crea los encabezados de la tabla y se optiene la poision
-    let contTabla ;
+    let contTabla ='';
     let Tabla = document.getElementById('tableBodyServicios');
 
     if(Servicios.length>0){
@@ -92,7 +92,7 @@ function tableServicios() {
 //funcion para mostrar las Rutas
 function tableRutas() {
     //crea los encabezados de la tabla y se optiene la poision
-    let contTabla ;
+    let contTabla ='';
     let Tabla = document.getElementById('tableBodyRutas');
 
     if(Rutas.length>0){

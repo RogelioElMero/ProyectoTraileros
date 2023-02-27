@@ -39,7 +39,7 @@ class Ruta {
      * 
      * @param {Empleado} Empleado 
      */
-    setEpleado = function (Empleado) {
+    setEmpleado = function (Empleado) {
         this.#Empleado = Empleado;
     }
     /**
@@ -66,6 +66,14 @@ class Ruta {
         return `${this.ID}-${this.HorarioPartida}-${this.HorarioLlegada}-${this.Destino}-${this.#Trasporte.Placa}-${this.#Empleado.Nombre}-${this.#Cliente.Nombre}-${this.#Servicio.Costo}`;
     }
     
+    /**
+     * 
+     * @returns Stirng
+     */
+    arrayRuta = function(){
+        return `${this.ID}--${this.HorarioPartida}--${this.HorarioLlegada}--${this.Destino}--${this.#Trasporte.ID}--${this.#Empleado.ID}--${this.#Cliente.ID}--${this.#Servicio.ID}`;
+    }
+
     /**
 	 * 
 	 * @returns Int

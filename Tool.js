@@ -68,7 +68,7 @@ class Tool {
     }
 
 
-    static getDataServicioosFromLocalStorage(parameter="Servicios"){
+    static getDataServiciosFromLocalStorage(parameter="Servicios"){
 
         let Array =[];
         let ServiciosArray = JSON.parse(localStorage.getItem(parameter));
@@ -98,19 +98,36 @@ class Tool {
      for(let i=0;i<RutasArray.length;i++){
 
         let object = new Ruta();
+        object.ID=RutasArray[i].ID;
         object.HorarioPartida = RutasArray[i].HorarioPartida;
         object.HorarioLlegada = RutasArray[i].HorarioLlegada;
         object.Destino = RutasArray[i].Destino;
-        object.setTrasporte(RutasArray[i].Trasporte);
-        object.Empleado = RutasArray[i].Empleado;
-        object.Cliente = RutasArray[i].Cliente;
-        object.Servicio = RutasArray[i].Servicio;
+        object.setTrasporte(this.ShareObject(Trasportes,RutasArray[i].Trasporte));
+        object.setEmpleado(this.ShareObject(Empleados,RutasArray[i].Empleado));
+        object.setCliente(this.ShareObject(Clientes,RutasArray[i].Cliente));
+        object.setServicio(this.ShareObject(Servicios,RutasArray[i].Servicio));
+       
+       
+       
+       
+       
         Array.push(object);
      }
     }
      return Array;
 
     }
+
+
+    static ShareObject(Array,ID){
+    let index;
+
+    for(let i =0; i<Array.length; i++){
+            (Array[i].ID==ID)? index=i : false;
+    }
+    return  Array[index];
+    }
+
 
  static getEmpleadoLocalStorage(parameter="Empleado"){
     let Array=[];
@@ -130,6 +147,31 @@ class Tool {
     static setDataToLocalStorage(parameter,data) {
         localStorage.setItem(parameter,JSON.stringify(data));       
     }
+
+
+static setRutasFromLocalStorage(parameter="Rutas",Rutas){
+        
+    let rutas = [];
+    let aux;
+    for(let i=0;i<Rutas.length;i++){
+        aux=Rutas[i].arrayRuta().split('--');
+        let object = new Ruta();
+        object.ID=aux[0];
+        object.HorarioPartida=aux[1];
+        object.HorarioLlegada=aux[2];
+        object.Destino=aux[3];
+        object.Trasporte=aux[4];
+        object.Empleado=aux[5];
+        object.Cliente=aux[6];
+        object.Servicio=aux[7];
+        rutas.push(object);
+    }
+
+    localStorage.setItem(parameter,JSON.stringify(rutas));
+
+}
+
+
 }
 
 

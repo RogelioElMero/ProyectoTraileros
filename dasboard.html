@@ -13,7 +13,6 @@
 <body>
     <script src="Trasporte.js"></script>
     <script src="Tablas.js"></script>
-    <script src="Save.js"></script>
     <script src="Persona.js"></script>
     <script src="Cliente.js"></script>
     <script src="Empleado.js"></script>
@@ -21,6 +20,8 @@
     <script src="Ruta.js"></script>
     <script src="Tool.js"></script>
     <script src="main.js"></script>
+    <script src="Upmain.js"></script>
+    <script src="Update.js"></script>
 
 
 
@@ -28,38 +29,42 @@
 
         <div class="text-bg-dark p-3">
             <div data-bs-theme="dark">
-                <button type="button" class="btn-close" aria-label="Close" onclick=""></button>
+                <button type="button" class="btn-close" aria-label="Close" onclick=moveSave()></button>
             </div>
             <h1>
                 <center>Los Traileros</center>
             </h1>
         </div>
         <br>
-        <button class="btn btn-dark" onclick=moveUpdate()>Actualizar datos</button>
-        <br>
+
         <hr>
+
+
         <table>
             <tr>
                 <br>
                 <div class="card">
                     <div class="text-bg-dark p-3">
-                        <h1 class="card-header">Guardar Vehiculos</h1>
+                        <h1 class="card-header">Actualizar Vehiculos</h1>
+                    </div>
+                    <div>
+                        <label for="">Elija el vehiculo a modificar</label><select name="Tras" id="Tras"></select>
                     </div>
                     <div class="card-body">
 
                         <label for="">Ingrese el modelo del vehiculo</label><br>
-                        <input type="text" name="Model" id="Model" placeholder="ej: Mercedes Benz"><br>
+                        <input type="text" name="UpModel" id="UpModel" placeholder="ej: Mercedes Benz"><br>
                         <label for="">Ingrese el tipo de suspensión</label><br>
-                        <input type="text" name="Suspension" id="Suspension"><br>
+                        <input type="text" name="UpSuspension" id="UpSuspension"><br>
                         <label for="">Ingrese la capacidad de carga maxima</label><br>
-                        <input type="text" name="Capacity" id="Capacity"><br>
+                        <input type="text" name="UpCapacity" id="UpCapacity"><br>
                         <label for="">Ingrese la placa del vehiculo</label><br>
-                        <input type="text" name="Plate" id="Plate"><br>
+                        <input type="text" name="UpPlate" id="UpPlate"><br>
                         <label for="">Ingrese el numero de serie</label><br>
-                        <input type="text" name="SerialNumber" id="SerialNumber"><br>
+                        <input type="text" name="UpSerialNumber" id="UpSerialNumber"><br>
                         <label for="">Ingrese el tipo de tracto que corres ponde</label><br>
-                        <input type="text" name="Tract" id="Tract"><br>
-                        <button onclick="saveTrasporte()" class="btn btn-dark">Guardar Trasporte</button>
+                        <input type="text" name="UpTract" id="UpTract"><br>
+                        <button onclick="updateTrasporte()" class="btn btn-dark">Actualizar Trasporte</button>
 
                     </div>
                     <div>
@@ -82,28 +87,31 @@
                 </table>
             </tr>
 
-
             <hr>
+
             <tr>
                 <td><br>
                     <div class="card">
                         <div class="text-bg-dark p-3">
-                            <h1 class="card-header">Guardar Empleados</h1>
+                            <h1 class="card-header">Actualizar Empleados</h1>
+                        </div>
+                        <div>
+                            <label for="">Elija el Empleado a modificar</label><select name="Empl" id="Empl"></select>
                         </div>
                         <div class="card-body">
                             <label for="">Ingrese el Nombre del empleado</label><br>
-                            <input type="text" name="NameE" id="NameE"><br>
+                            <input type="text" name="UpNameE" id="UpNameE"><br>
                             <label for="">Ingrese el apellido del empleado</label><br>
-                            <input type="text" name="LastnameE" id="LastnameE"><br>
+                            <input type="text" name="UpLastnameE" id="UpLastnameE"><br>
                             <label for="">Ingrese la Ocupacion del empleado</label><br>
-                            <input type="text" name="Occupation" id="Occupation"><br>
+                            <input type="text" name="UpOccupation" id="UpOccupation"><br>
                             <label for="">Ingrese el horario del empleado</label><br>
-                            <input type="text" name="Schedule" id="Schedule"><br>
+                            <input type="text" name="UpSchedule" id="UpSchedule"><br>
                             <label for="">Ingrese el Curp del empleado</label><br>
-                            <input type="text" name="Curp" id="Curp"><br>
+                            <input type="text" name="UpCurp" id="UpCurp"><br>
                             <label for="">Ingrese ine del empleado</label><br>
-                            <input type="text" name="Ine" id="Ine"><br>
-                            <button onclick="saveEmpleado()" class="btn btn-dark">Guardar Empleado</button>
+                            <input type="text" name="UpIne" id="UpIne"><br>
+                            <button onclick="updateEmpleado()" class="btn btn-dark">Actualizar Empleado</button>
                         </div>
                     </div>
                 </td>
@@ -128,16 +136,19 @@
                 <td><br>
                     <div class="card">
                         <div class="text-bg-dark p-3">
-                            <h1 class="card-header">Guardar Clientes</h1>
+                            <h1 class="card-header">Actualizar Clientes</h1>
+                        </div>
+                        <div>
+                            <label for="">Elija el Cliente a modificar</label><select name="Clie" id="Clie"></select>
                         </div>
                         <div class="card-body">
                             <label for="">Ingrese el Nombre del cliente</label><br>
-                            <input type="text" name="NameC" id="NameC"><br>
+                            <input type="text" name="UpNameC" id="UpNameC"><br>
                             <label for="">Ingrese el apellido del cliente</label><br>
-                            <input type="text" name="LastnameC" id="LastnameC"><br>
+                            <input type="text" name="UpLastnameC" id="UpLastnameC"><br>
                             <label for="">Ingrese las referencias del cliente</label><br>
-                            <input type="text" name="References" id="References"><br>
-                            <button onclick="GuardarCliente()" class="btn btn-dark">Guardar Cliente</button>
+                            <input type="text" name="UpReferences" id="UpReferences"><br>
+                            <button onclick="updateCliente()" class="btn btn-dark">Actualizar Cliente</button>
                         </div>
                     </div>
                 </td>
@@ -158,17 +169,20 @@
                 <td><br>
                     <div class="card">
                         <div class="text-bg-dark p-3">
-                            <h1 class="card-header">Guardar Servicio</h1>
+                            <h1 class="card-header">Actualizar Servicio</h1>
+                        </div>
+
+                        <div>
+                            <label for="">Elija el Servicio a modificar</label><select name="Serv" id="Serv"></select>
                         </div>
                         <div class="card-body">
-
                             <label for="">Ingrese el tipo de material</label><br>
-                            <input type="text" name="TypeMaterial" id="TypeMaterial"><br>
+                            <input type="text" name="UpTypeMaterial" id="UpTypeMaterial"><br>
                             <label for="">Ingrese la cantidad de material</label><br>
-                            <input type="text" name="AmountMaterial" id="AmountMaterial"><br>
+                            <input type="text" name="UpAmountMaterial" id="UpAmountMaterial"><br>
                             <label for="">Ingrese el costo</label><br>
-                            <input type="text" name="Cost" id="Cost"><br>
-                            <button onclick="GuardarServicio()" class="btn btn-dark">Guardar servicio</button>
+                            <input type="text" name="UpCost" id="UpCost"><br>
+                            <button onclick="updateServicio()" class="btn btn-dark">Actualizar servicio</button>
 
                         </div>
                     </div>
@@ -192,16 +206,18 @@
 
                     <div class="card">
                         <div class="text-bg-dark p-3">
-                            <h1 class="card-header">Guardar Rutas</h1>
+                            <h1 class="card-header">Actualizar Rutas</h1>
+                        </div>
+                        <div>
+                            <label for="">Elija el Empleado a modificar</label><select name="Ruta" id="Ruta"></select>
                         </div>
                         <div class="card-body">
-
                             <label for="">Ingrese el horario de salida</label><br>
-                            <input type="text" name="ScheduleExit" id="ScheduleExit"><br>
+                            <input type="text" name="UpScheduleExit" id="UpScheduleExit"><br>
                             <label for="">Ingrese el horario de llegada</label><br>
-                            <input type="text" name="SchedulArrive" id="SchedulArrive"><br>
+                            <input type="text" name="UpSchedulArrive" id="UpSchedulArrive"><br>
                             <label for="">Ingrese el destino a llegar</label><br>
-                            <input type="text" name="Destiny" id="Destiny"><br>
+                            <input type="text" name="UpDestiny" id="UpDestiny"><br>
                             <label for="">ingrese el vehiculo</label><br>
                             <select name="Tra" id="Tra"></select><br>
                             <label for="">ingrese el empleado</label><br>
@@ -212,9 +228,9 @@
                             <select name="Ser" id="Ser"></select><br>
 
 
-                            <button onclick="GuardarRuta()" class="btn btn-dark">Guardar Ruta</button>
-                        </div>
+                            <button onclick="updateRuta()" class="btn btn-dark">Actualizar Ruta</button>
 
+                        </div>
                 </td>
                 <td>
                     <table class="table" id="tableRutas">
@@ -236,7 +252,7 @@
 
         </table>
     </div>
-    <Script src="Ejecution.js"></Script>
+    <Script src="UpEjecution.js"></Script>
 </body>
 
 </html>

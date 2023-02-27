@@ -143,7 +143,7 @@ function GuardarRuta() {
 
     //se declara un object se tipo ruta
     let R = new Ruta(ScheduleExit, SchedulArrive, Destiny, tras, emp, cli, ser);
-        R.ID=R.createId();
+    R.ID=R.createId();
         
     //llama las funciones set de cada tipo para guardar una ruta en los demas ibjetos creados y crear la relacion marcada en el diagrama 
     tras.setRuta(R);
@@ -155,7 +155,7 @@ function GuardarRuta() {
     //guarda la Ruta en un arreglo en main 
     Rutas.push(R);
 
-    Tool.setDataToLocalStorage("Rutas",Rutas);
+    Tool.setRutasFromLocalStorage("Rutas",Rutas);
 
 
 
