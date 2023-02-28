@@ -68,7 +68,7 @@ class Ruta {
     
     /**
      * 
-     * @returns Stirng
+     * @returns String
      */
     arrayRuta = function(){
         return `${this.ID}--${this.HorarioPartida}--${this.HorarioLlegada}--${this.Destino}--${this.#Trasporte.ID}--${this.#Empleado.ID}--${this.#Cliente.ID}--${this.#Servicio.ID}`;

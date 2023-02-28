@@ -128,7 +128,14 @@ class Tool {
     return  Array[index];
     }
 
-
+    static ShareIndex(Array,ID){
+        let index;
+    
+        for(let i =0; i<Array.length; i++){
+                (Array[i].ID==ID)? index=i : false;
+        }
+        return  index;
+        }
  static getEmpleadoLocalStorage(parameter="Empleado"){
     let Array=[];
     let EmpleadoArray = JSON.parse(localStorage.getItem(parameter));

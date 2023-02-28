@@ -12,7 +12,6 @@
 
 <body>
     <script src="Trasporte.js"></script>
-    <script src="Tablas.js"></script>
     <script src="Persona.js"></script>
     <script src="Cliente.js"></script>
     <script src="Empleado.js"></script>
@@ -48,7 +47,7 @@
                         <h1 class="card-header">Actualizar Vehiculos</h1>
                     </div>
                     <div>
-                        <label for="">Elija el vehiculo a modificar</label><select name="Tras" id="Tras"></select>
+                        <label for="">ID del vehiculo</label><input id="Tras" type="text" disabled>
                     </div>
                     <div class="card-body">
 
@@ -82,6 +81,8 @@
                         <th>PLACAS</th>
                         <th>NUMERO DE SERIE</th>
                         <th>TRACTO</th>
+                        <th>ACTUALIZAR</th>
+                        <th>ELIMINAR</th>
                     </thead>
                     <tbody id="tableBodyTrasportes"></tbody>
                 </table>
@@ -96,7 +97,7 @@
                             <h1 class="card-header">Actualizar Empleados</h1>
                         </div>
                         <div>
-                            <label for="">Elija el Empleado a modificar</label><select name="Empl" id="Empl"></select>
+                            <label for="">ID del Empleado</label><input type="text" id="Empl" disabled>
                         </div>
                         <div class="card-body">
                             <label for="">Ingrese el Nombre del empleado</label><br>
@@ -125,6 +126,8 @@
                             <th>HORARIO</th>
                             <th>CURP</th>
                             <th>INE</th>
+                            <th>ACTUALIZAR</th>
+                            <th>ELIMINAR</th>
                         </thead>
                         <tbody id="tableBodyEmpledos"></tbody>
 
@@ -139,7 +142,7 @@
                             <h1 class="card-header">Actualizar Clientes</h1>
                         </div>
                         <div>
-                            <label for="">Elija el Cliente a modificar</label><select name="Clie" id="Clie"></select>
+                            <label for="">ID del Cliente</label><input type="text" id="Clie" disabled>
                         </div>
                         <div class="card-body">
                             <label for="">Ingrese el Nombre del cliente</label><br>
@@ -159,6 +162,8 @@
                             <th>NOMBRE CLIENTE</th>
                             <th>APELLIDO CLIENTE</th>
                             <th>REFERENCIAS</th>
+                            <th>ACTUALIZAR</th>
+                            <th>ELIMINAR</th>
                         </thead>
                         <tbody id="tableBodyClientes"></tbody>
                     </table>
@@ -173,7 +178,7 @@
                         </div>
 
                         <div>
-                            <label for="">Elija el Servicio a modificar</label><select name="Serv" id="Serv"></select>
+                            <label for="">ID del Servicio</label><input type="text" id="Serv" disabled>
                         </div>
                         <div class="card-body">
                             <label for="">Ingrese el tipo de material</label><br>
@@ -191,9 +196,11 @@
                     <table class="table" id="tableServicios">
                         <thead>
                             <th>ID</th>
-                            <th>MATERIAL </th>
+                            <th>MATERIAL</th>
                             <th>CANTIDAD</th>
                             <th>COSTO</th>
+                            <th>ACTUALIZAR</th>
+                            <th>ELIMINAR</th>
                         </thead>
                         <tbody id="tableBodyServicios"></tbody>
 
@@ -209,7 +216,7 @@
                             <h1 class="card-header">Actualizar Rutas</h1>
                         </div>
                         <div>
-                            <label for="">Elija el Empleado a modificar</label><select name="Ruta" id="Ruta"></select>
+                            <label for="">ID de la Ruta</label><input type="text" id="Ruta" disabled>
                         </div>
                         <div class="card-body">
                             <label for="">Ingrese el horario de salida</label><br>
@@ -243,6 +250,8 @@
                             <th>EMPLEADO</th>
                             <th>CLIENTE</th>
                             <th>SERVICIO</th>
+                            <th>ACTUALIZAR</th>
+                            <th>ELIMINAR</th>
                         </thead>
                         <tbody id="tableBodyRutas"></tbody>
                     </table>
@@ -252,7 +261,10 @@
 
         </table>
     </div>
+    <script src="UpTablas.js"></script>
     <Script src="UpEjecution.js"></Script>
+
+
 </body>
 
 </html>
