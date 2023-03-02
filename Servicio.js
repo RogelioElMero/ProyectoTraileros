@@ -20,6 +20,23 @@ class Servicio {
 
     /**
      * 
+     * @param {Int} Index 
+     */
+    deleteRuta=function(Index){
+        this.#Ruta.splice(Index,1);
+    }
+
+    /**
+     * 
+     * @returns Ruta[]
+     */
+    arrayRuta=function(){
+        let ruta=this.#Ruta;
+        return ruta;
+    
+    }
+    /**
+     * 
      * @param {Ruta} Ruta 
      */
     setRuta = function(Ruta){

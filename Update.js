@@ -25,6 +25,8 @@ function updateTrasporte() {
 
     Tool.setDataToLocalStorage("Trasportes", Trasportes);
 
+
+
     alert("Vehiculo Actualizado exitosamente");
     //resetea los input
     document.getElementById("Tras").value = null;
@@ -38,6 +40,7 @@ function updateTrasporte() {
     //funciones para mostrar y llenar algunos campos
 
     tableTrasportes();
+    Rutas = Tool.getDataRutasFromLocalStorage("Rutas");
     tableRutas();
 }
 
@@ -62,6 +65,7 @@ function updateEmpleado() {
 
 
     Tool.setDataToLocalStorage("Empleados", Empleados);
+    
 
     alert("Empleado Actualizado exitosamente");
     //resetea los input 
@@ -78,6 +82,7 @@ function updateEmpleado() {
     //funciones para mostrar y llenar algunos campos
 
     tableEmpleados();
+    Rutas = Tool.getDataRutasFromLocalStorage("Rutas");
     tableRutas();
 }
 
@@ -96,7 +101,7 @@ function updateCliente() {
 
 
     Tool.setDataToLocalStorage("Clientes", Clientes);
-
+    
     alert("Cliente Actualizado exitosamente");
     //resetea los input
     document.getElementById("Clie").value = null;
@@ -110,6 +115,7 @@ function updateCliente() {
     //funciones para mostrar y llenar algunos campos
 
     tableClientes();
+    Rutas = Tool.getDataRutasFromLocalStorage("Rutas");
     tableRutas();
 }
 
@@ -129,6 +135,7 @@ function updateServicio() {
 
 
     Tool.setDataToLocalStorage("Servicios", Servicios);
+    
 
     alert("Servicio Actualizado exitosamente");
     //resetea los input
@@ -143,6 +150,7 @@ function updateServicio() {
     //funciones para mostrar y llenar algunos campos
 
     tableServicios();
+    Rutas = Tool.getDataRutasFromLocalStorage("Rutas");
     tableRutas();
 }
 
@@ -152,14 +160,43 @@ function updateRuta() {
     let ScheduleExit = document.getElementById('UpScheduleExit').value;
     let SchedulArrive = document.getElementById("UpSchedulArrive").value;
     let Destiny = document.getElementById("UpDestiny").value;
-    let index=Tool.ShareIndex(Rutas,option);
+    let index = Tool.ShareIndex(Rutas, option);
 
     Rutas[index].HorarioPartida = ScheduleExit;
     Rutas[index].HorarioLlegada = SchedulArrive;
     Rutas[index].Destino = Destiny;
 
+    let array=Rutas[index].arrayRuta();
+    array=array.split("--");
+    
+    let id_trasporte = array[4];
+    let id_empleado = array[5];
+    let id_cliente = array[6];
+    let id_servicio = array[7];
+
+    id_trasporte = Tool.ShareIndex(Trasportes, id_trasporte);
+    id_empleado = Tool.ShareIndex(Empleados, id_empleado);
+    id_cliente = Tool.ShareIndex(Clientes, id_cliente);
+    id_servicio = Tool.ShareIndex(Servicios, id_servicio);
+
+    let arrayTrasporte = Trasportes[id_trasporte].arrayRuta();
+    let arrayEmpleado = Empleados[id_empleado].arrayRuta();
+    let arrayCliente = Clientes[id_cliente].arrayRuta();
+    let arrayServicio = Servicios[id_servicio].arrayRuta();
+
+    let indexRuEnTra = Tool.ShareIndex(arrayTrasporte, Rutas[index].ID);
+    let indexRuEnEmp = Tool.ShareIndex(arrayEmpleado, Rutas[index].ID);
+    let indexRuEnCli = Tool.ShareIndex(arrayCliente, Rutas[index].ID);
+    let indexRuEnSer = Tool.ShareIndex(arrayServicio, Rutas[index].ID);
+
+
+    Trasportes[id_trasporte].deleteRuta(indexRuEnTra);
+    Empleados[id_empleado].deleteRuta(indexRuEnEmp);
+    Clientes[id_cliente].deleteRuta(indexRuEnCli);
+    Servicios[id_servicio].deleteRuta(indexRuEnSer);
+
     let Tra = document.getElementById("Tra").value;
-    let tras = Trasportes[Tra];
+    let tras = Trasportes[Tra];    
     Rutas[index].setTrasporte(tras);
 
     let Emp = document.getElementById("Emp").value;
@@ -170,32 +207,41 @@ function updateRuta() {
     let cli = Clientes[Cli];
     Rutas[index].setCliente(cli);
 
-
     let Ser = document.getElementById("Ser").value;
     let ser = Servicios[Ser];
-    Rutas[index].setServicio(ser);
+    Rutas[index].setServicio(ser);  
 
     Tool.setRutasFromLocalStorage("Rutas", Rutas);
-
-    alert("Ruta Actualizado exitosamente");
-
+    
     tras.setRuta(Rutas[index]);
     emp.setRuta(Rutas[index]);
     cli.setRuta(Rutas[index]);
     ser.setRuta(Rutas[index]);
+    alert("Ruta Actualizado exitosamente");
+
+
+
+
+
+
 
     //resetea los input
-    document.getElementById("Ruta").value=null;
-    document.getElementById('UpScheduleExit').value=null;
-    document.getElementById("UpSchedulArrive").value=null;
-    document.getElementById("UpDestiny").value=null;
-    document.getElementById("Tra").value=null;
-    document.getElementById("Emp").value=null;
-    document.getElementById("Cli").value=null;
-    document.getElementById("Ser").value=null;
+    document.getElementById("Ruta").value = null;
+    document.getElementById('UpScheduleExit').value = null;
+    document.getElementById("UpSchedulArrive").value = null;
+    document.getElementById("UpDestiny").value = null;
+    SelecClientes();
+    SelecEmpleados();
+    SelecTrasportes();
+    SelecServicios();
+    
+    //document.getElementById("Tra").value = null;
+    //document.getElementById("Emp").value = null;
+    //document.getElementById("Cli").value = null;
+    //document.getElementById("Ser").value = null;
 
     //funciones para mostrar y llenar algunos campos
 
-    tableServicios();
+    Rutas = Tool.getDataRutasFromLocalStorage("Rutas");
     tableRutas();
 }

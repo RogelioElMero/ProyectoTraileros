@@ -1,182 +1,235 @@
 class Tool {
 
-    static getDataTrasportesFromLocalStorage(parameter="Trasportes"){
+    static getDataTrasportesFromLocalStorage(parameter = "Trasportes") {
 
-        let Array =[];
+        let Array = [];
         let TrasportesArray = JSON.parse(localStorage.getItem(parameter));
-     if(TrasportesArray!=null && TrasportesArray!=undefined){
-        for(let i=0;i<TrasportesArray.length;i++){
+        if (TrasportesArray != null && TrasportesArray != undefined) {
+            for (let i = 0; i < TrasportesArray.length; i++) {
 
-            let object = new Trasporte();
-            object.ID=TrasportesArray[i].ID;
-            object.Modelo = TrasportesArray[i].Modelo;
-            object.Suspension = TrasportesArray[i].Suspension;
-            object.CapacidadCarga = TrasportesArray[i].CapacidadCarga;
-            object.NumeroSerie = TrasportesArray[i].NumeroSerie;
-            object.Placa = TrasportesArray[i].Placa;
-            object.TipoTracto = TrasportesArray[i].TipoTracto;
-            Array.push(object);
+                let object = new Trasporte();
+                object.ID = TrasportesArray[i].ID;
+                object.Modelo = TrasportesArray[i].Modelo;
+                object.Suspension = TrasportesArray[i].Suspension;
+                object.CapacidadCarga = TrasportesArray[i].CapacidadCarga;
+                object.NumeroSerie = TrasportesArray[i].NumeroSerie;
+                object.Placa = TrasportesArray[i].Placa;
+                object.TipoTracto = TrasportesArray[i].TipoTracto;
+                Array.push(object);
+            }
         }
+
+        return Array;
+
     }
 
-    return Array;
 
-    }
+    static getDataEmpleadosFromLocalStorage(parameter = "Empleados") {
 
-
-    static getDataEmpleadosFromLocalStorage(parameter="Empleados"){
-
-        let Array =[];
+        let Array = [];
         let EmpleadosArray = JSON.parse(localStorage.getItem(parameter));
-     if(EmpleadosArray!=null && EmpleadosArray!=undefined){
-        for(let i=0;i<EmpleadosArray.length;i++){
+        if (EmpleadosArray != null && EmpleadosArray != undefined) {
+            for (let i = 0; i < EmpleadosArray.length; i++) {
+
+                let object = new Empleado();
+                object.ID = EmpleadosArray[i].ID;
+                object.Nombre = EmpleadosArray[i].Nombre;
+                object.Apellido = EmpleadosArray[i].Apellido;
+                object.Ocupacion = EmpleadosArray[i].Ocupacion;
+                object.Horario = EmpleadosArray[i].Horario;
+                object.Curp = EmpleadosArray[i].Curp;
+                object.Ine = EmpleadosArray[i].Ine;
+                Array.push(object);
+            }
+        }
+
+        return Array;
+
+    }
+
+    static getDataClientesFromLocalStorage(parameter = "Clientes") {
+
+        let Array = [];
+        let ClientesArray = JSON.parse(localStorage.getItem(parameter));
+        if (ClientesArray != null && ClientesArray != undefined) {
+            for (let i = 0; i < ClientesArray.length; i++) {
+
+                let object = new Cliente();
+                object.ID = ClientesArray[i].ID;
+                object.Nombre = ClientesArray[i].Nombre;
+                object.Apellido = ClientesArray[i].Apellido;
+                object.Referencia = ClientesArray[i].Referencia;
+                Array.push(object);
+            }
+        }
+
+        return Array;
+
+    }
+
+
+    static getDataServiciosFromLocalStorage(parameter = "Servicios") {
+
+        let Array = [];
+        let ServiciosArray = JSON.parse(localStorage.getItem(parameter));
+        if (ServiciosArray != null && ServiciosArray != undefined) {
+            for (let i = 0; i < ServiciosArray.length; i++) {
+
+                let object = new Servicio();
+                object.ID = ServiciosArray[i].ID;
+                object.TipoMaterial = ServiciosArray[i].TipoMaterial;
+                object.CantidadMaterial = ServiciosArray[i].CantidadMaterial;
+                object.Costo = ServiciosArray[i].Costo;
+                Array.push(object);
+            }
+        }
+
+        return Array;
+
+    }
+
+    static getDataRutasFromLocalStorage(parameter = "Rutas") {
+
+        let Array = [];
+        let RutasArray = JSON.parse(localStorage.getItem(parameter));
+
+        if (RutasArray != null && RutasArray != undefined) {
+
+            for (let i = 0; i < RutasArray.length; i++) {
+
+                let object = new Ruta();
+                object.ID = RutasArray[i].ID;
+                object.HorarioPartida = RutasArray[i].HorarioPartida;
+                object.HorarioLlegada = RutasArray[i].HorarioLlegada;
+                object.Destino = RutasArray[i].Destino;
+                object.setTrasporte(this.ShareObject(Trasportes, RutasArray[i].Trasporte));
+                object.setEmpleado(this.ShareObject(Empleados, RutasArray[i].Empleado));
+                object.setCliente(this.ShareObject(Clientes, RutasArray[i].Cliente));
+                object.setServicio(this.ShareObject(Servicios, RutasArray[i].Servicio));
+
+
+                Array.push(object);
+            }
+        }
+        return Array;
+
+    }
+
+    static rutaExists(ruta, ID) {
+        let value = false;
+
+        for (let i = 0; i < ruta.length; i++) {
+            (ruta[i].ID == ID) ? value = true : false;
+        }
+        return value;
+    }
+
+    static setRelatiosTheRutas(Rutas) {
+
+        for (let i = 0; i < Rutas.length; i++) {
+            let array = Rutas[i].arrayRuta();
+            array = array.split("--");
+
+            
+
+            let id_trasporte = array[4];
+            let id_empleado = array[5];
+            let id_cliente = array[6];
+            let id_servicio = array[7];
+    
+    
+            id_trasporte=Tool.ShareIndex(Trasportes,id_trasporte);
+            id_empleado=Tool.ShareIndex(Empleados,id_empleado);
+            id_cliente=Tool.ShareIndex(Clientes,id_cliente);
+            id_servicio=Tool.ShareIndex(Servicios,id_servicio);
+
+            let arrayTrasporte=Trasportes[id_trasporte].arrayRuta();
+            let arrayEmpleado=Empleados[id_empleado].arrayRuta();
+            let arrayCliente=Clientes[id_cliente].arrayRuta();
+            let arrayServicio=Servicios[id_servicio].arrayRuta();
+
+            if(!this.rutaExists(arrayTrasporte,array[0])){
+                Trasportes[id_trasporte].setRuta(Rutas[i]);
+            }
+
+            if(!this.rutaExists(arrayEmpleado,array[0])){
+                Empleados[id_empleado].setRuta(Rutas[i]);
+            }
+            
+            if(!this.rutaExists(arrayCliente,array[0])){
+                Clientes[id_cliente].setRuta(Rutas[i]);
+            }
+            
+            if(!this.rutaExists(arrayServicio,array[0])){
+                Servicios[id_servicio].setRuta(Rutas[i]);
+            }
+            
+        }
+
+    }
+
+
+    static ShareObject(Array, ID) {
+        let index;
+
+        for (let i = 0; i < Array.length; i++) {
+            (Array[i].ID == ID) ? index = i : false;
+        }
+        return Array[index];
+    }
+
+    static ShareIndex(Array, ID) {
+        let index;
+
+        for (let i = 0; i < Array.length; i++) {
+            (Array[i].ID == ID) ? index = i : false;
+        }
+        return index;
+    }
+
+
+
+    static getEmpleadoLocalStorage(parameter = "Empleado") {
+        let Array = [];
+        let EmpleadoArray = JSON.parse(localStorage.getItem(parameter));
+
+        for (let i = 0; i < EmpleadoArray.length; i++) {
 
             let object = new Empleado();
-            object.ID=EmpleadosArray[i].ID;
-            object.Nombre=EmpleadosArray[i].Nombre;
-            object.Apellido=EmpleadosArray[i].Apellido;
-            object.Ocupacion=EmpleadosArray[i].Ocupacion;
-            object.Horario=EmpleadosArray[i].Horario;
-            object.Curp=EmpleadosArray[i].Curp;
-            object.Ine=EmpleadosArray[i].Ine;
+            object.ID = EmpleadoArray[i].ID;
+            object.Nombre = EmpleadoArray[i].Nombre;
+            object.Apellido = EmpleadoArray[i].Apellido;
             Array.push(object);
         }
+        return Array;
     }
 
-    return Array;
-
+    static setDataToLocalStorage(parameter, data) {
+        localStorage.setItem(parameter, JSON.stringify(data));
     }
 
-    static getDataClientesFromLocalStorage(parameter="Clientes"){
 
-        let Array =[];
-        let ClientesArray = JSON.parse(localStorage.getItem(parameter));
-     if(ClientesArray!=null && ClientesArray!=undefined){
-        for(let i=0;i<ClientesArray.length;i++){
+    static setRutasFromLocalStorage(parameter = "Rutas", Rutas) {
 
-            let object = new Cliente();
-            object.ID=ClientesArray[i].ID;
-            object.Nombre=ClientesArray[i].Nombre;
-            object.Apellido=ClientesArray[i].Apellido;
-            object.Referencia=ClientesArray[i].Referencia;
-            Array.push(object);
+        let rutas = [];
+        let aux;
+        for (let i = 0; i < Rutas.length; i++) {
+            aux = Rutas[i].arrayRuta().split('--');
+            let object = new Ruta();
+            object.ID = aux[0];
+            object.HorarioPartida = aux[1];
+            object.HorarioLlegada = aux[2];
+            object.Destino = aux[3];
+            object.Trasporte = aux[4];
+            object.Empleado = aux[5];
+            object.Cliente = aux[6];
+            object.Servicio = aux[7];
+            rutas.push(object);
         }
-    }
 
-    return Array;
-
-    }
-
-
-    static getDataServiciosFromLocalStorage(parameter="Servicios"){
-
-        let Array =[];
-        let ServiciosArray = JSON.parse(localStorage.getItem(parameter));
-     if(ServiciosArray!=null && ServiciosArray!=undefined){
-        for(let i=0;i<ServiciosArray.length;i++){
-
-            let object = new Servicio();
-            object.ID=ServiciosArray[i].ID;
-            object.TipoMaterial=ServiciosArray[i].TipoMaterial;
-            object.CantidadMaterial=ServiciosArray[i].CantidadMaterial;
-            object.Costo=ServiciosArray[i].Costo;
-            Array.push(object);
-        }
-    }
-
-    return Array;
+        localStorage.setItem(parameter, JSON.stringify(rutas));
 
     }
-
-    static getDataRutasFromLocalStorage(parameter="Rutas"){
-
-     let Array=[];
-     let RutasArray = JSON.parse(localStorage.getItem(parameter));
-
-     if(RutasArray!=null && RutasArray!=undefined){
-
-     for(let i=0;i<RutasArray.length;i++){
-
-        let object = new Ruta();
-        object.ID=RutasArray[i].ID;
-        object.HorarioPartida = RutasArray[i].HorarioPartida;
-        object.HorarioLlegada = RutasArray[i].HorarioLlegada;
-        object.Destino = RutasArray[i].Destino;
-        object.setTrasporte(this.ShareObject(Trasportes,RutasArray[i].Trasporte));
-        object.setEmpleado(this.ShareObject(Empleados,RutasArray[i].Empleado));
-        object.setCliente(this.ShareObject(Clientes,RutasArray[i].Cliente));
-        object.setServicio(this.ShareObject(Servicios,RutasArray[i].Servicio));
-       
-       
-       
-       
-       
-        Array.push(object);
-     }
-    }
-     return Array;
-
-    }
-
-
-    static ShareObject(Array,ID){
-    let index;
-
-    for(let i =0; i<Array.length; i++){
-            (Array[i].ID==ID)? index=i : false;
-    }
-    return  Array[index];
-    }
-
-    static ShareIndex(Array,ID){
-        let index;
-    
-        for(let i =0; i<Array.length; i++){
-                (Array[i].ID==ID)? index=i : false;
-        }
-        return  index;
-        }
- static getEmpleadoLocalStorage(parameter="Empleado"){
-    let Array=[];
-    let EmpleadoArray = JSON.parse(localStorage.getItem(parameter));
-
-    for( let i=0;i< EmpleadoArray.length;i++){
-
-        let object = new Empleado();
-        object.ID = EmpleadoArray[i].ID;
-        object.Nombre = EmpleadoArray[i].Nombre;
-        object.Apellido = EmpleadoArray[i].Apellido;
-        Array.push(object);
- }
-    return Array;
-}
-
-    static setDataToLocalStorage(parameter,data) {
-        localStorage.setItem(parameter,JSON.stringify(data));       
-    }
-
-
-static setRutasFromLocalStorage(parameter="Rutas",Rutas){
-        
-    let rutas = [];
-    let aux;
-    for(let i=0;i<Rutas.length;i++){
-        aux=Rutas[i].arrayRuta().split('--');
-        let object = new Ruta();
-        object.ID=aux[0];
-        object.HorarioPartida=aux[1];
-        object.HorarioLlegada=aux[2];
-        object.Destino=aux[3];
-        object.Trasporte=aux[4];
-        object.Empleado=aux[5];
-        object.Cliente=aux[6];
-        object.Servicio=aux[7];
-        rutas.push(object);
-    }
-
-    localStorage.setItem(parameter,JSON.stringify(rutas));
-
-}
 
 
 }

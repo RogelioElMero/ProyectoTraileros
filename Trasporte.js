@@ -26,6 +26,24 @@ class Trasporte {
         this.TipoTracto=tipotracto;
 
     }
+
+    /**
+     * 
+     * @param {Int} Index 
+     */
+    deleteRuta=function(Index){
+        this.#Ruta.splice(Index,1);
+    }
+
+
+    /**
+     * 
+     * @returns Ruta[]
+     */
+    arrayRuta=function(){
+    let ruta=this.#Ruta;
+    return ruta;
+   }
     /**
      * 
      * @param {Ruta} Ruta 
@@ -50,6 +68,7 @@ class Trasporte {
 	createId=function(){
         return Math.floor(Math.random() * 10000);
 	}
+
 
 
 }
