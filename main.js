@@ -1,5 +1,4 @@
-//areglos que funcionaran como tipo base de datos en todo el programa 
-
+//areglos que funcionaran como tipo base de datos en todo el programa sinedo llenados desde el almacenamiento local 
 var Trasportes = Tool.getDataTrasportesFromLocalStorage("Trasportes");
 var Clientes = Tool.getDataClientesFromLocalStorage("Clientes");
 var Servicios = Tool.getDataServiciosFromLocalStorage("Servicios");
@@ -16,7 +15,7 @@ function SelecTrasportes() {
     select.innerHTML = '';
    
     for (let i = 0; i < Trasportes.length; i++) {
-        options += `<option value="${i}">${Trasportes[i].ID}</option>`;
+        options += `<option value="${i}">${Trasportes[i].ID}->${Trasportes[i].Placa}</option>`;
     }
 
     select.innerHTML = options;
@@ -28,7 +27,7 @@ function SelecEmpleados() {
     let select = document.getElementById('Emp');
     select.innerHTML = '';
     for (let i = 0; i < Empleados.length; i++) {
-        options += `<option value="${i}">${Empleados[i].ID}</option>`;
+        options += `<option value="${i}">${Empleados[i].ID}->${Empleados[i].Nombre}</option>`;
     }
 
     select.innerHTML = options;
@@ -40,7 +39,7 @@ function SelecClientes() {
     let select = document.getElementById('Cli');
     select.innerHTML = '';
     for (let i = 0; i < Clientes.length; i++) {
-        options += `<option value="${i}">${Clientes[i].ID}</option>`;
+        options += `<option value="${i}">${Clientes[i].ID}->${Clientes[i].Nombre}</option>`;
     }
 
     select.innerHTML = options;
@@ -52,7 +51,7 @@ function SelecServicios() {
     let select = document.getElementById('Ser');
     select.innerHTML = '';
     for (let i = 0; i < Servicios.length; i++) {
-        options += `<option value="${i}">${Servicios[i].ID}</option>`;
+        options += `<option value="${i}">${Servicios[i].ID}->${Servicios[i].Costo}</option>`;
     }
 
     select.innerHTML = options;

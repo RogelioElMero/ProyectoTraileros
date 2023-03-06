@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LosTraileros</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
@@ -35,8 +37,15 @@
             </h1>
         </div>
         <br>
-        <button class="btn btn-dark" onclick=moveUpdate()>Actualizar datos</button>
         <br>
+        <a class="fancy" href="#" onclick=moveUpdate()>
+            <span class="top-key"></span>
+            <span class="text">Actualizar</span>
+            <span class="bottom-key-1"></span>
+            <span class="bottom-key-2"></span>
+        </a>
+        <br>
+        <br> <br>
         <hr>
         <table>
             <tr>
@@ -46,26 +55,39 @@
                         <h1 class="card-header">Guardar Vehiculos</h1>
                     </div>
                     <div class="card-body">
+                        <form onsubmit="saveTrasporte(event);">
+                            <label for="">Ingrese el modelo del Transporte</label><br>
+                            <input type="text" name="Model" id="Model" required pattern="[a-z0-9]+" minlength="5"
+                                maxlength="20" placeholder="ej.Kenworth"><br>
+                            <label for="">Ingrese el tipo de suspensión</label><br>
+                            <input type="text" name="Suspension" id="Suspension" required minlength="5" maxlength="20"
+                                placeholder="ej.Neumatica/muelles"><br>
+                            <label for="">Ingrese la capacidad de carga maxima</label><br>
+                            <input type="text" name="Capacity" id="Capacity" required pattern="[0-9]+" minlength="2"
+                                maxlength="10" placeholder="35 toneladas"><br>
+                            <label for="">Ingrese la placa del Transporte</label><br>
+                            <input type="text" name="Plate" id="Plate" required pattern="[0-9A-Z]+" minlength="2"
+                                maxlength="9" placeholder="LGA-00-00"><br>
+                            <label for="">Ingrese el numero de serie</label><br>
+                            <input type="text" name="SerialNumber" id="SerialNumber" required pattern="[0-9A-Z]+"
+                                minlength="5" maxlength="17" placeholder="1HGBH41JXMN109186"><br>
+                            <label for="">Ingrese el tipo de tracto que corres ponde</label><br>
+                            <input type="text" name="Tract" id="Tract" required pattern="[a-zA-Z]+" minlength="2"
+                                maxlength="15" placeholder="Tractocamion/Torton"><br>
+                            <button type="submit" class="btn btn-dark">Guardar Trasporte</button>
+                        </form>
 
-                        <label for="">Ingrese el modelo del vehiculo</label><br>
-                        <input type="text" name="Model" id="Model" placeholder="ej: Mercedes Benz" ><br>
-                        <label for="">Ingrese el tipo de suspensión</label><br>
-                        <input type="text" name="Suspension" id="Suspension"><br>
-                        <label for="">Ingrese la capacidad de carga maxima</label><br>
-                        <input type="text" name="Capacity" id="Capacity"><br>
-                        <label for="">Ingrese la placa del vehiculo</label><br>
-                        <input type="text" name="Plate" id="Plate"><br>
-                        <label for="">Ingrese el numero de serie</label><br>
-                        <input type="text" name="SerialNumber" id="SerialNumber"><br>
-                        <label for="">Ingrese el tipo de tracto que corres ponde</label><br>
-                        <input type="text" name="Tract" id="Tract"><br>
-                        <button onclick="saveTrasporte()" class="btn btn-dark">Guardar Trasporte</button>
+
+
+
+
 
                     </div>
                     <div>
 
                     </div>
                 </div>
+                </form>
 
             <tr>
                 <table class="table" id="tableTrasportes">
@@ -91,19 +113,27 @@
                             <h1 class="card-header">Guardar Empleados</h1>
                         </div>
                         <div class="card-body">
-                            <label for="">Ingrese el Nombre del empleado</label><br>
-                            <input type="text" name="NameE" id="NameE"><br>
-                            <label for="">Ingrese el apellido del empleado</label><br>
-                            <input type="text" name="LastnameE" id="LastnameE"><br>
-                            <label for="">Ingrese la Ocupacion del empleado</label><br>
-                            <input type="text" name="Occupation" id="Occupation"><br>
-                            <label for="">Ingrese el horario del empleado</label><br>
-                            <input type="text" name="Schedule" id="Schedule"><br>
-                            <label for="">Ingrese el Curp del empleado</label><br>
-                            <input type="text" name="Curp" id="Curp"><br>
-                            <label for="">Ingrese ine del empleado</label><br>
-                            <input type="text" name="Ine" id="Ine"><br>
-                            <button onclick="saveEmpleado()" class="btn btn-dark">Guardar Empleado</button>
+                            <form onsubmit="saveEmpleado(event);">
+                                <label for="">Ingrese el Nombre del empleado</label><br>
+                                <input type="text" name="NameE" id="NameE" required="" pattern="[a-zA-Z]+" minlength="5"
+                                    maxlength="20" placeholder="ej.Rafael"><br>
+                                <label for="">Ingrese el apellido del empleado</label><br>
+                                <input type="text" name="LastnameE" id="LastnameE" required="" pattern="[a-zA-Z]+"
+                                    minlength="5" maxlength="20" placeholder="ej.Lopez"><br>
+                                <label for="">Ingrese la Ocupacion del empleado</label><br>
+                                <input type="text" name="Occupation" id="Occupation" required="" pattern="[a-zA-Z]+"
+                                    minlength="5" maxlength="15" placeholder="ej.Conductor/Administrador"><br>
+                                <label for="">Ingrese el horario del empleado</label><br>
+                                <input type="text" name="Schedule" id="Schedule" minlength="2" maxlength="10"
+                                    placeholder="ej.9:00 am"><br>
+                                <label for="">Ingrese el Curp del empleado</label><br>
+                                <input type="text" name="Curp" id="Curp" required="" minlength="5" maxlength="18"
+                                    placeholder="eje.XXXXXXXXXXXXXXXXXX"><br>
+                                <label for="">Ingrese ine del empleado</label><br>
+                                <input type="text" name="Ine" id="Ine" required="" minlength="5" maxlength="18"
+                                    placeholder="ej.XXXXXXXXXXXXXXXXXX"><br>
+                                <button type="submit" class="btn btn-dark">Guardar Empleado</button>
+                            </form>
                         </div>
                     </div>
                 </td>
@@ -131,13 +161,18 @@
                             <h1 class="card-header">Guardar Clientes</h1>
                         </div>
                         <div class="card-body">
-                            <label for="">Ingrese el Nombre del cliente</label><br>
-                            <input type="text" name="NameC" id="NameC"><br>
-                            <label for="">Ingrese el apellido del cliente</label><br>
-                            <input type="text" name="LastnameC" id="LastnameC"><br>
-                            <label for="">Ingrese las referencias del cliente</label><br>
-                            <input type="text" name="References" id="References"><br>
-                            <button onclick="GuardarCliente()" class="btn btn-dark">Guardar Cliente</button>
+                            <form onsubmit="saveCliente(event);">
+                                <label for="">Ingrese el Nombre del cliente</label><br>
+                                <input type="text" name="NameC" id="NameC" required="" pattern="[a-zA-Z]+" minlength="5"
+                                    maxlength="20" placeholder="ej.Gabriel"><br>
+                                <label for="">Ingrese el apellido del cliente</label><br>
+                                <input type="text" name="LastnameC" id="LastnameC" required="" pattern="[a-zA-Z]+"
+                                    minlength="5" maxlength="20" placeholder="ej.Rosales"><br>
+                                <label for="">Ingrese las referencias del cliente</label><br>
+                                <input type="text" name="References" id="References" required="" pattern="[a-zA-Z]+"
+                                    minlength="5" maxlength="30" placeholder="ej.Proveniente de"><br>
+                                <button type="submit" class="btn btn-dark">Guardar cliente</button>
+                            </form>
                         </div>
                     </div>
                 </td>
@@ -161,15 +196,18 @@
                             <h1 class="card-header">Guardar Servicio</h1>
                         </div>
                         <div class="card-body">
-
-                            <label for="">Ingrese el tipo de material</label><br>
-                            <input type="text" name="TypeMaterial" id="TypeMaterial"><br>
-                            <label for="">Ingrese la cantidad de material</label><br>
-                            <input type="text" name="AmountMaterial" id="AmountMaterial"><br>
-                            <label for="">Ingrese el costo</label><br>
-                            <input type="text" name="Cost" id="Cost"><br>
-                            <button onclick="GuardarServicio()" class="btn btn-dark">Guardar servicio</button>
-
+                            <form onsubmit="saveServicio(event);">
+                                <label for="">Ingrese el tipo de material</label><br>
+                                <input type="text" name="TypeMaterial" id="TypeMaterial" required="" pattern="[a-zA-Z]+"
+                                    minlength="4" maxlength="15" placeholder="ej.Gravilla"><br>
+                                <label for="">Ingrese la cantidad de material</label><br>
+                                <input type="text" name="AmountMaterial" id="AmountMaterial" required=""
+                                    pattern="[0-9]+" minlength="2" maxlength="6" placeholder="ej.10-35 Toneladas"><br>
+                                <label for="">Ingrese el costo</label><br>
+                                <input type="text" name="Cost" id="Cost" required="" pattern="[0-9]+" minlength="2"
+                                    maxlength="8" placeholder="ej.$2800"><br>
+                                <button type="submit" class="btn btn-dark">Guardar servicio</button>
+                            </form>
                         </div>
                     </div>
                 </td>
@@ -195,25 +233,28 @@
                             <h1 class="card-header">Guardar Rutas</h1>
                         </div>
                         <div class="card-body">
-
-                            <label for="">Ingrese el horario de salida</label><br>
-                            <input type="text" name="ScheduleExit" id="ScheduleExit"><br>
-                            <label for="">Ingrese el horario de llegada</label><br>
-                            <input type="text" name="SchedulArrive" id="SchedulArrive"><br>
-                            <label for="">Ingrese el destino a llegar</label><br>
-                            <input type="text" name="Destiny" id="Destiny"><br>
-                            <label for="">ingrese el vehiculo</label><br>
-                            <select name="Tra" id="Tra"></select><br>
-                            <label for="">ingrese el empleado</label><br>
-                            <select name="Emp" id="Emp"></select><br>
-                            <label for="">ingrese el cliente</label><br>
-                            <select name="Cli" id="Cli"></select><br>
-                            <label for="">ingrese el servicio</label><br>
-                            <select name="Ser" id="Ser"></select><br>
-
-
-                            <button onclick="GuardarRuta()" class="btn btn-dark">Guardar Ruta</button>
+                            <form onsubmit="saveRuta(event);">
+                                <label for="">Ingrese el horario de salida</label><br>
+                                <input type="text" name="ScheduleExit" id="ScheduleExit" required="" pattern="[a-z0-9]+"
+                                    minlength="4" maxlength="10" placeholder="ej.10:00 am"><br>
+                                <label for="">Ingrese el horario de llegada</label><br>
+                                <input type="text" name="SchedulArrive" id="SchedulArrive" required="" pattern="[0-9]+"
+                                    minlength="4" maxlength="10" placeholder="ej.17:00 pm"><br>
+                                <label for="">Ingrese el destino a llegar</label><br>
+                                <input type="text" name="Destiny" id="Destiny" required="" pattern="[a-zA-Z]+"
+                                    minlength="4" maxlength="20" placeholder="ej.Obra Tonanitla"><br>
+                                <label for="">ingrese el vehiculo</label><br>
+                                <select name="Tra" id="Tra"></select><br>
+                                <label for="">ingrese el empleado</label><br>
+                                <select name="Emp" id="Emp"></select><br>
+                                <label for="">ingrese el cliente</label><br>
+                                <select name="Cli" id="Cli"></select><br>
+                                <label for="">ingrese el servicio</label><br>
+                                <select name="Ser" id="Ser"></select><br>
+                                <button type="submit" class="btn btn-dark">Guardar Ruta</button>
+                            </form>
                         </div>
+                    </div>
 
                 </td>
                 <td>

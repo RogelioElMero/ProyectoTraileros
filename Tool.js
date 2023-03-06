@@ -1,5 +1,11 @@
 class Tool {
 
+    //obtiene los trasportes del local storage y los almacena en el arreglo de trasportes 
+    /**
+     * 
+     * @param {string} parameter 
+     * @returns array
+     */
     static getDataTrasportesFromLocalStorage(parameter = "Trasportes") {
 
         let Array = [];
@@ -23,7 +29,12 @@ class Tool {
 
     }
 
-
+    //obtiene los empleados del local storage y los almacena en el arreglo de empleados
+    /**
+     * 
+     * @param {string} parameter 
+     * @returns array
+     */
     static getDataEmpleadosFromLocalStorage(parameter = "Empleados") {
 
         let Array = [];
@@ -47,6 +58,12 @@ class Tool {
 
     }
 
+    //obtiene los clientes del local storage y los almacena en el arreglo de clientes
+    /**
+     * 
+     * @param {string} parameter 
+     * @returns array
+     */
     static getDataClientesFromLocalStorage(parameter = "Clientes") {
 
         let Array = [];
@@ -67,7 +84,12 @@ class Tool {
 
     }
 
-
+    //obtiene los servicios del local storage y los almacena en el arreglo de servicios
+    /**
+     * 
+     * @param {string} parameter 
+     * @returns array
+     */
     static getDataServiciosFromLocalStorage(parameter = "Servicios") {
 
         let Array = [];
@@ -88,6 +110,12 @@ class Tool {
 
     }
 
+    //obtiene las rutas del local storage y los almacena en el arreglo de rutas
+    /**
+     * 
+     * @param {string} parameter 
+     * @returns array
+     */
     static getDataRutasFromLocalStorage(parameter = "Rutas") {
 
         let Array = [];
@@ -115,6 +143,13 @@ class Tool {
 
     }
 
+    //funcion booleana que verifica si existe el id de la ruta en el array de rutas 
+    /**
+     * 
+     * @param {array} ruta 
+     * @param {int} ID 
+     * @returns boolean 
+     */  
     static rutaExists(ruta, ID) {
         let value = false;
 
@@ -124,6 +159,15 @@ class Tool {
         return value;
     }
 
+    /*
+    como el sistema requiere restrcciones las cuales se vasan en sus relaciones 
+    es fundamental que estas este activas por lo que esta funcion las actrae y 
+    las guarda donde deben de coincidir y verifica si estan estan repetivas para no ponerlas
+    */ 
+   /**
+    * 
+    * @param {array} Rutas 
+    */
     static setRelatiosTheRutas(Rutas) {
 
         for (let i = 0; i < Rutas.length; i++) {
@@ -168,7 +212,13 @@ class Tool {
 
     }
 
-
+    //funcion para encontrar un objeto con respecto al id y despues returnar este 
+    /**
+     * 
+     * @param {array} Array 
+     * @param {int} ID 
+     * @returns object
+     */
     static ShareObject(Array, ID) {
         let index;
 
@@ -178,6 +228,13 @@ class Tool {
         return Array[index];
     }
 
+    //funcion para buscar el indice del array conrespecto al id
+    /**
+     * 
+     * @param {array} Array 
+     * @param {int} ID 
+     * @returns index
+     */
     static ShareIndex(Array, ID) {
         let index;
 
@@ -188,7 +245,12 @@ class Tool {
     }
 
 
-
+    //obtiene los empleados del local storage y los almacena en el arreglo de empeados
+    /**
+     * 
+     * @param {string} parameter 
+     * @returns array
+     */
     static getEmpleadoLocalStorage(parameter = "Empleado") {
         let Array = [];
         let EmpleadoArray = JSON.parse(localStorage.getItem(parameter));
@@ -204,11 +266,22 @@ class Tool {
         return Array;
     }
 
+    //ingresa los datos del array en el local storage con su nombre dado
+    /**
+     * 
+     * @param {string} parameter 
+     * @param {array} data 
+     */
     static setDataToLocalStorage(parameter, data) {
         localStorage.setItem(parameter, JSON.stringify(data));
     }
 
-
+    //ingresa los datos del array rutas de forma diferente al ser un objeto con datos privados
+    /**
+     * 
+     * @param {string} parameter 
+     * @param {array} Rutas 
+     */
     static setRutasFromLocalStorage(parameter = "Rutas", Rutas) {
 
         let rutas = [];

@@ -1,7 +1,9 @@
 
 
 //funcion para guardar los Trasportes
-function saveTrasporte() {
+function saveTrasporte(e) {
+    //se ejecuta antes de guardar 
+    e.preventDefault();
     //obtiene los valores de cada input de trasporte
     let Model = document.getElementById('Model').value;
     let Suspension = document.getElementById("Suspension").value;
@@ -19,8 +21,9 @@ function saveTrasporte() {
     //guarda el Trasporte en un arreglo en main 
     Trasportes.push(Trs);
 
+    //sube el array corespondiente con un nombre para indentificarlo
     Tool.setDataToLocalStorage("Trasportes",Trasportes);
-
+    //mensaje de guardado
     alert("Vehiculo guardado exitosamente");
     //resetea los input
     document.getElementById('Model').value = null;
@@ -38,7 +41,9 @@ function saveTrasporte() {
 }
 
 //funccion para guardar los empleados
-function saveEmpleado() {
+function saveEmpleado(e) {
+    //se ejecuta antes de guardar 
+    e.preventDefault();
     //obtiene los valores de cada input de Empleado
     let NameE = document.getElementById("NameE").value;
     let LastnameE = document.getElementById("LastnameE").value;
@@ -57,6 +62,7 @@ function saveEmpleado() {
     
     //guardarlo  en el local storage
     Tool.setDataToLocalStorage("Empleados",Empleados);
+    //mensaje de guardado
     alert("Empleado guardado exitosamente");
     
     //resetea los input
@@ -73,7 +79,9 @@ function saveEmpleado() {
 }
 
 //funcion para guardar los clientes
-function GuardarCliente() {
+function saveCliente(e) {
+    //se ejecuta antes de guardar 
+    e.preventDefault();
     //obtiene los valores de cada input de cliente
     let NameC = document.getElementById("NameC").value;
     let LastnameC = document.getElementById("LastnameC").value;
@@ -84,7 +92,9 @@ function GuardarCliente() {
     Cln.ID=Cln.createId();
     //guarda el Cliente en un arreglo en main 
     Clientes.push(Cln);
+    //sube el array corespondiente con un nombre para indentificarlo
     Tool.setDataToLocalStorage("Clientes",Clientes);
+    //mensaje de guardado
     alert("Cliente guardado exitosamente");
     //resetea los input
     document.getElementById('NameC').value = null;
@@ -97,7 +107,9 @@ function GuardarCliente() {
 }
 
 //funcion para guardar los servicios
-function GuardarServicio() {
+function saveServicio(e) {
+    //se ejecuta antes de guardar 
+    e.preventDefault();
     //obtiene los valores de cada input de servicio
     let TypeMaterial = document.getElementById("TypeMaterial").value;
     let AmountMaterial = document.getElementById("AmountMaterial").value;
@@ -108,7 +120,9 @@ function GuardarServicio() {
     Srv.ID=Srv.createId();
     //guarda el Servicio en un arreglo en main  
     Servicios.push(Srv);
+    //sube el array corespondiente con un nombre para indentificarlo
     Tool.setDataToLocalStorage("Servicios",Servicios);
+    //mensaje de guardado
     alert("Servicio guardado exitosamente");
     //resetea los input
     document.getElementById('TypeMaterial').value = null;
@@ -123,12 +137,15 @@ function GuardarServicio() {
 
 
 //funcion para guardar la ruta
-function GuardarRuta() {
+function saveRuta(e) {
+    //se ejecuta antes de guardar 
+    e.preventDefault();
     //obtiene los valores de cada input de ruta
     let ScheduleExit = document.getElementById("ScheduleExit").value;
     let SchedulArrive = document.getElementById("SchedulArrive").value;
     let Destiny = document.getElementById("Destiny").value;
 
+    //obtiene los objetod de cada array para mandarlos ala ruta
     let Tra = document.getElementById("Tra").value;
     let tras = Trasportes[Tra];
 
@@ -155,10 +172,10 @@ function GuardarRuta() {
     //guarda la Ruta en un arreglo en main 
     Rutas.push(R);
 
+    //sube el array rutas corespondiente con un nombre para indentificarlo
     Tool.setRutasFromLocalStorage("Rutas",Rutas);
 
-
-
+    //mensaje de guardar
     alert("Ruta guardada exitosamente");
 
     //resetea los input
